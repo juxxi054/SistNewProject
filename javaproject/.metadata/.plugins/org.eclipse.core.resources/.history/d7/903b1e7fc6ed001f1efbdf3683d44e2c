@@ -24,7 +24,7 @@ public class CalAgeTest_10 {
         //출력
         System.out.println("이름"+name);
         System.out.println("태어난년도"+myBirthYear);
-        System.out.println("나이"+myAge+"세");
+        System.out.println("나이"+myAge"세");
 	
 	}
 

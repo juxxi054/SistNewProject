@@ -1,0 +1,23 @@
+package day0218;
+
+import java.util.Scanner;
+
+public class KeyBoardln_12 {
+
+	public static void main(String[] args) {
+		// Scanner는 문자열이나 숫자를 모두 키보드로 입력받을때 생성
+
+	Scanner sc=new Scanner(System.in);
+	
+	
+	//변수선언 
+	String name,city; //이름,지역 
+	int age;
+	
+	//입력할멘트
+	System.out.println("이름을 입력해 보세요");
+	
+	
+	}
+
+}
