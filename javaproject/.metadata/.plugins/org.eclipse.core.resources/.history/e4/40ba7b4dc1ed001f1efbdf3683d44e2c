@@ -1,0 +1,15 @@
+package day0218;
+
+
+public class CalAgeTest_10 {
+
+	public static void main(String[] args) {
+		// 자바실행시 이름과 태어난 연도를 입력하면 나이를 구할수있다
+		// args 변수를 이용해서 해볼것
+		
+		//import
+		Calendar cal=Calendar.getInstance()
+
+	}
+
+}
