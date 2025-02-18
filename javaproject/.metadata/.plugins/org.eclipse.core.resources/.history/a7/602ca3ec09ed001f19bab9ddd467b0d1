@@ -1,0 +1,9 @@
+package day0217;
+
+public class QuizwArgs {
+        System.out.println("이름:"+args[0]);
+        System.out.println("나이:"+args[1]);
+        System.out.println("지역:"+args[2]);
+	}
+
+}
