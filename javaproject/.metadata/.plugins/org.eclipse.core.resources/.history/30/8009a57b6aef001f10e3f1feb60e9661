@@ -42,7 +42,7 @@ public static void quiz2() {
 	 for(int i=1;i<=d;i++)
 		 
 		 tot+=i;
-	 System.out.println("1부터"+d+"까지의 합은"+tot+"입니다");
+	 System.out.println("숫자를 입력하면 1부터 입력한 숫자까지의 합계를 구해서 출력하시오 "+d,tot);
 	 
 	 
 }
@@ -50,7 +50,6 @@ public static void quiz2() {
 		// TODO Auto-generated method stub
 		
 		//quiz1();
-		quiz2();
 	}
 
 }

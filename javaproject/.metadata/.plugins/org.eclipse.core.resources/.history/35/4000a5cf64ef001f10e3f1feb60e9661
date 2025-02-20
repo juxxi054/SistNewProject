@@ -35,7 +35,12 @@ public class ForWhileReview_15 {
 		System.out.println("1부터"+(i-1)+"까지의 합은"+sum);
 	}
 	
-	
+	int total=0;
+	for (int a=1;a<=20;a+=2)
+	{
+		total+=a;
+	}
+	System.out.println("1~20까지 2씩증가한 수의 합계는 "+total);
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

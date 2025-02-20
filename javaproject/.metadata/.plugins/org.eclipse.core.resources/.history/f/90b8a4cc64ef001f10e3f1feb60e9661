@@ -34,8 +34,6 @@ public class ForWhileReview_15 {
 		}
 		System.out.println("1부터"+(i-1)+"까지의 합은"+sum);
 	}
-	
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
