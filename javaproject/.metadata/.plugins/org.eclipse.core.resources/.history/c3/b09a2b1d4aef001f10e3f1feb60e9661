@@ -1,0 +1,30 @@
+package day2020;
+
+public class DoWhileTest_10 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//조건이 참일동안 반복
+		int i=1;
+		
+		System.out.println("While문 결과");
+		while(i<=5)
+		{
+			//출력후 증가
+			System.out.println(i+++" ");
+		}
+		System.out.println();
+		
+		
+		System.out.print("do~While문 결과");
+		
+		i=1;
+		
+		do {
+			System.out.print(i++);
+		}while(i<=5);
+		System.out.println("종료");
+	}
+
+}

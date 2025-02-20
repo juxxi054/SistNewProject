@@ -1,0 +1,13 @@
+package day2020;
+
+public class ForWhlieTest_09 {
+
+	public static void main(String[] args) {
+		// 10 9 8 7......0
+		for(int i=10;i>=0;i--)
+		{
+          System.out.print(i+" ");
+	}
+
+}
+}

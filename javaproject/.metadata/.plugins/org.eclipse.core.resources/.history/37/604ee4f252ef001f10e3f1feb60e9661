@@ -1,0 +1,17 @@
+package day2020;
+
+public class ForSum_13 {
+
+	public static void main(String[] args) {
+		// 1~10까지의 반복문 합구하기
+		
+		int sum=0;
+		for(int i=1;i<=10;i++)
+		{
+			sum+=i; //sum=sum+i ( 누적)
+		}
+ 
+		System.out.println("1~10까지의 합은"+sum+"입니다");
+	}
+
+}

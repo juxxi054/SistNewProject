@@ -1,0 +1,14 @@
+package day2020;
+
+public class ForTest_11 {
+
+	public static void main(String[] args) {
+		// 1~10까지 숫자 가로로 출력
+
+		
+		int i=1;
+		
+		while(i>10)
+	}
+
+}
