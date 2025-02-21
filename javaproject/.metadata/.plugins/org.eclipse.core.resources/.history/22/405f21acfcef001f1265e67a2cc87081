@@ -1,0 +1,19 @@
+package day2021;
+
+import java.util.Scanner;
+
+public class GuguScan_05 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       // 원하는 구구단을 입력하시오
+	   //5
+	   //5단만 출력하시오
+		
+		Scanner sc=new Scanner(System.in);
+		int gugu;
+		
+		
+	}
+
+}

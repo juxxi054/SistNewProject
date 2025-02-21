@@ -1,0 +1,28 @@
+package day2021;
+
+import java.util.Scanner;
+
+public class ForSumScan_07 {
+
+	public static void main(String[] args) {
+		// 점수를 3번 반복해서 입력후 합계를 구하시오 (1~100까지 입력할것)
+		// 1번째 점수를 입력하세요 (1~100)
+		// 2번째 점수를 입력하세요 (1~100)
+		// 3번째 점수를 입력하세요 (1~100)
+		//총합계는 ""
+		
+		
+		Scanner sc=new Scanner(System.in);
+		int sum=0;
+		int score;
+		
+		
+		for(int i=1;i<=3;i++)
+	     {
+			System.out.print(i+"번째 점수를 입력하세요");
+			score=sc.nextInt();
+			
+	     }
+	}
+
+}

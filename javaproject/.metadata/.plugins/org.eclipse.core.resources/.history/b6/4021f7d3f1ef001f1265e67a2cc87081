@@ -1,0 +1,26 @@
+package day2021;
+
+import java.util.Scanner;
+
+public class WhileSumAvg_02 {
+
+	public static void main(String[] args) {
+		// 임의의 숫자를 입력하여 합계,평균,입력한 개수를 구한다
+		//단 0을 입력하면 반복문을 빠져나간다
+       Scanner sc=new Scanner(System.in);
+       int su; //입력할수
+       int sum=0; //합계
+       double evg=0; //평군
+       
+       while(true)
+       {
+    	   System.out.println("숫자를 입력하시오(종료:0)");
+    	   su=sc.nextInt();
+    	   
+    	   if(su==0)
+    		   System.out.println("종료합니다");
+    		   break;
+       }
+	}
+
+}
