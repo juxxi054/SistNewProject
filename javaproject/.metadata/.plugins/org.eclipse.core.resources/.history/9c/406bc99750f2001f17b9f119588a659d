@@ -1,0 +1,19 @@
+package day0224;
+
+public class EsString_03 {
+
+	public static void main(String[] args) {
+	
+		System.out.println("String 객체에 대한 멤버메서드");
+		
+		String str1="apple";
+	    String str2="Apple";
+	    String str3="Have a Nice Day!!!";
+	    String str4="Happy Day";
+	    	
+	    System.out.println("str3의 길이: "+str3.length()); //공백도 길이에 포함
+	    System.out.println(str3.trim().length()); //앞뒤공백만 제거한다	
+	    System.out.println("str4의 길이: "+str4.trim().length());	
+	}
+
+}
