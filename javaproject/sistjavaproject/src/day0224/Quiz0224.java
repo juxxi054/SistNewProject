@@ -21,7 +21,7 @@ public class Quiz0224 {
 		 tot[i]=java[i]+oracle[i]+spring[i];
 		 avg[i]=tot[i]/3.0;
 		}
-		for(int i=0;i<4;i++)
+		for(int i=0;i<4;i++)                         
 		{
 			rank[i]=1;
 			for(int j=0;j<4;j++)

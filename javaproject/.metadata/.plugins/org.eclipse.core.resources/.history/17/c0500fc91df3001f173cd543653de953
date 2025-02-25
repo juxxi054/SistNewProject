@@ -1,0 +1,43 @@
+package day0225;
+
+import java.util.Scanner;
+
+public class ArrayStringIndex_02 {
+
+	public static void main(String[] args) {
+		//이름을 입력하여 몇번째에 있는지, 아니면 우리반 학생이 아닌지 검색해볼것
+		// 반복해서 검색하다가 끝 이라고 하면 프로그램 종료할것
+        String [] stu= {"이주형","박서아","손주영","안승민","최민지","김서준","이승혁","김하민"};
+        boolean b;
+        Scanner sc=new Scanner(System.in);
+        String stuName;
+        
+        while(true)
+        {
+        	System.out.println("검색할 이름을 입력하세요");
+        	stuName=sc.nextLine();
+        }
+         //if(stuName.equals("q") || stuName.equals("Q))
+        //if(stuName.equalsIgnoreCase("q")
+        
+        if(stuName.equals("끝"))
+         {
+        	 System.out.println("학생검색을 종료합니다");
+        	 break;
+         }
+         b=false;
+         
+         for(int i=0;i<stu.length;i++)
+         {
+        	 if(stuName.equals(stu[i]))
+        	 {
+        		 b=true;
+        		System.out.println(i+1 + "번째에서 검색됨");		 
+        	 }
+         }
+         if(!b)
+        	 System.out.println(stuName+"님은 우리반 학생이 아닙니다");
+	}
+
+}
+}

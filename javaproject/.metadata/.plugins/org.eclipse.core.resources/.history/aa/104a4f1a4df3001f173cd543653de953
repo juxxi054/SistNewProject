@@ -1,0 +1,31 @@
+package day0225;
+
+import java.util.Scanner;
+
+public class QuizStartsWithSearch_09 {
+
+	public static void main(String[] args) {
+		/* 
+		 * 성을 입력시 그성씨를 가진 사람과 총인원수를 출력할것!!!
+		 * 종료라고 입력시 프로그램 종료
+		 * 
+		 * 검색할 성을 입력해주세요
+		 * 손
+		 * 3:손흥민
+		 * 7:손미나
+		 * 총 2명 검색
+		 * 검색할 성을 입력해주세요
+		 * 전
+		 * 전 씨 성을 가진 연예인은 없습니다
+		 * 검색할 성을 입력해주세요
+		 * 종료
+		 * 검색을 종료 합니다
+		 * 
+           */
+       
+		String [] celeb= {"공유","신민아","이정재","손흥민","이강인","이효리","이진","손미나"};
+		int cnt;
+		Scanner sc=new Scanner(System.in);
+	}
+
+}

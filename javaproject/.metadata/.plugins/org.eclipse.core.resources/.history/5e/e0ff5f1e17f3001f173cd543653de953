@@ -1,0 +1,50 @@
+package day0225;
+
+import java.util.Scanner;
+
+public class ArrayIntIndex_01 {
+
+	public static void main(String[] args) {
+		//숫자배열중에서 내가 입력한 숫자가 있는지 있다면 몇번째 있는지 찾아보자 
+       
+		int [] nums= {8,74,15,69,14,33,45,71,24,1,99,4};
+		
+		//System.out.println(nums.length);
+		
+		Scanner sc=new Scanner(System.in);
+		int su;
+		boolean flag; //숫자가 있는지 없는지에 대한 변수
+		
+		while(true)
+		{
+			System.out.println("검색할 숫자 입력하세요");
+			su=sc.nextInt();
+			
+			//종료 조건
+			if(su==0)
+			{
+				System.out.println("숫자 검색을 종료 합니다");
+				break;
+				
+			}
+			
+			flag=false;  //찾으면 true로 변경
+			
+			//값찾기 (배열만큼 변경)
+			
+			for(int i=0;i<nums.length;i++)
+			{
+				//true 조건
+				if(su==nums[i])
+				{
+					flag=true;
+					System.out.println(i+1+"번째에서 검색됨");
+				}
+			}
+			
+			
+			
+		}
+	}
+
+}

@@ -1,0 +1,16 @@
+package day0225;
+
+public class ArrayStringTemp_06 {
+
+	public static void main(String[] args) {
+		String[] stuNames= {"공주영","김한솔","박찬희","유민규","원지안","조수현","현민재"};
+	
+	  System.out.println("**정렬전 출력");
+	  for(int i=0;i<stuNames.length;i++)
+	  {
+		  System.out.print(stuNames[i]+" ");
+	  }
+	  System.out.println();
+	}
+
+}

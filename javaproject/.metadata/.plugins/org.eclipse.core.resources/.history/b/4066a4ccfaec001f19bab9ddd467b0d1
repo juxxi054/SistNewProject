@@ -1,9 +1,0 @@
-package day0217;
-
-public class HelloJava {
-
-	public static void main(String[] args) {
-		
-		System.out.print("오늘은 자바를 시작하는날");
-	}
-}
