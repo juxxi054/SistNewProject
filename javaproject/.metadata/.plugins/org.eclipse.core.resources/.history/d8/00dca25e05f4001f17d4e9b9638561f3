@@ -1,0 +1,46 @@
+package day0226;
+
+import java.util.Scanner;
+
+public class qq {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//문제2. 5명의 나이를 입력후 40세 이상과 40세 미만이 각각 몇명인지 출력하고 
+				//평균도 구하시오 (for)
+				//40세 이상 인원수:3
+				//40세 미만 인원수:2
+				//평균 나이: **세
+				
+				Scanner scanner=new Scanner(System.in);
+				int tage;
+				int a=0;
+				int b=0;
+				
+				for(int i=1;i<=5;i++)
+				{
+					System.out.println(i+"번째 나이를 입력하세요");
+					int age=scanner.nextInt();
+					
+					if (age>=40) 
+					{
+						a++;
+					}
+					else
+					{
+						b++;
+					}
+					
+					tage +=age;
+					
+					double avg=tage/5.0;
+					
+					System.out.println("40세 이상 인원수"+a);
+					System.out.println("40세 이상 인원수"+b);
+					System.out.println("평균나이"+avg+"세");
+					
+				}
+			}
+	}
+
+

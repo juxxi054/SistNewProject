@@ -25,20 +25,22 @@ public class QuizStartsWithSearch_09 {
        
 		String [] celeb= {"공유","신민아","이정재","손흥민","이강인","이효리","이진","손미나"};
 		Scanner sc=new Scanner(System.in);
-		
+		String seng;
+		boolean find;
 		
 		while(true)
 		 {
         	System.out.println("검색할 성을 입력하세요");
-        	String seng=sc.nextLine();
+        	seng=sc.nextLine();
         	
+        	//종료
         	if(seng.equals("종료") )
         	{
         		System.out.println("검색을 종료합니다");
         		break;
         	}
-        		boolean find=false;
-        		int cnt=0;
+        		find=false;
+        		int cnt=0; //검색할때 마다 0으로 초기화가 필요
         		
         		for (int i=0;i<celeb.length;i++)
         		{
@@ -48,7 +50,7 @@ public class QuizStartsWithSearch_09 {
                              System.out.println("검색된 사람:");
                              find = true;
                          }
-                         System.out.println((i + 1) + ":" + celeb[i]);
+                         System.out.println(i + ":" + celeb[i]);
                          cnt++;
         			}
         		}
