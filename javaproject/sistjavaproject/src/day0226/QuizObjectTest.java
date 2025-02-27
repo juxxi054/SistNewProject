@@ -19,19 +19,43 @@ public class QuizObjectTest {
 		 */
 		
 	        // 과정명 출력
-	        System.out.println("과정명: " +String processName);
+	        QuizObject.processName="쌍용교욱센터 자바교육 4강의장";
+	        		System.out.println(QuizObject.processName);
 	        System.out.println("=============================");
 	        
 	        // 학생1 정보
-	        Student student1 = new Student("이주연", 17, "부산", "그림그리기");
+	       
 	        System.out.println("학생1정보");
-	        student1.displayStudentInfo();
+	        QuizObject ob1=new QuizObject();
+	        ob1.stuName="이주연";
+	        ob1.age=17;
+	        System.out.println(ob1.stuName);
+	        System.out.println(ob1.age);
+	        //set메서드 이용수정
+	        ob1.setCity("부산"); //리턴값이 없으므로 변수 못만듬
+	        ob1.setHobby("그림그리기");
+            //get메서드 이용 값얻기
+	        String city1=ob1.getCity();
+	        String hobby1=ob1.getHobby();
+	        //출력
+	        System.out.println(city1);
+	        System.out.println(hobby1);
 	        
-	        // 학생2 정보
-	        Student student2 = new Student("윤지안", 24, "서울", "요리하기");
-	        System.out.println("학생2정보");
-	        student2.displayStudentInfo();
-         
+            System.out.println("학생2정보");
+            QuizObject ob2=new QuizObject();
+	        ob2.stuName="윤지안";
+	        ob2.age=24;
+	        System.out.println(ob2.stuName);
+	        System.out.println(ob2.age);
+	        //set메서드 이용수정
+	        ob2.setCity("서울"); //리턴값이 없으므로 변수 못만듬
+	        ob2.setHobby("요리하기");
+            //get메서드 이용 값얻기
+	        String city2=ob2.getCity();
+	        String hobby2=ob2.getHobby();
+	        //출력
+	        System.out.println(city2);
+	        System.out.println(hobby2);
 	}
 
 }

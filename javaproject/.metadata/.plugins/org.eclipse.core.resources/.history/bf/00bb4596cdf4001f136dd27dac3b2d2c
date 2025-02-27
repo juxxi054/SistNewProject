@@ -1,0 +1,57 @@
+package day0227;
+
+public class Ex9ObjectTest {
+
+class MyCar{
+	
+	private String carName;
+	private int carPrice;
+	private String carColor;
+	
+	//setter
+	public void setCarName(String cname)
+	{
+		 carName=cname;
+	}
+	
+	public void setCarPrice(int cprice)
+	{
+		 carPrice=cprice;
+	}
+	
+	public void setCarColor(String ccolor)
+	{
+		 carColor=ccolor;
+	}
+	
+	
+	//getter
+	
+	public String getCarName()
+	{
+		return carName;
+	}
+	
+	public String getCarPrice()
+	{
+		return carPrice;
+	}
+	
+	public String getCarColor()
+	{
+		return carColor;
+	}
+	
+//출력용 메서드
+	
+	public void writeCarInfo()
+	{
+		System.out.println("자동차명"+carName);
+	}
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

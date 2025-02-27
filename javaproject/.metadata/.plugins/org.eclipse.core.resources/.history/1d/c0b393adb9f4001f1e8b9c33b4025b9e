@@ -1,0 +1,41 @@
+package day0227;
+
+
+class MyDate{
+	
+	
+	private int year;
+	private int month;
+	private int day;
+	
+	//명시적 생성자 (인자3개)
+	 public MyDate(int y,int m,int d) {
+	  
+		 this.year=y;
+		 month=m;
+		 day=d;
+	
+}
+	//getter 메서드
+ 
+	 public int getYear()
+	 {
+		 return year;
+	 }
+	 public int getMonth()
+	 {
+		 return month;
+	 }
+	 public int getDay()
+	 {
+		 return day;
+	 }
+
+public class Ex6ObjectTest {
+
+	public static void main(String[] args) {
+		// 파라메터에 출생년일을 넣어서 출력해보세요
+
+	}
+
+}

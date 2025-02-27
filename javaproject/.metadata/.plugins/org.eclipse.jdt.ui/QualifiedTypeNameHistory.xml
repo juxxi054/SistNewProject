@@ -17,6 +17,16 @@
     <fullyQualifiedTypeName name="day0226.Ex11Counter"/>
     <fullyQualifiedTypeName name="javax.print.DocFlavor.STRING"/>
     <fullyQualifiedTypeName name="day0226.Ex12Info"/>
+    <fullyQualifiedTypeName name="day0227.Ex1Object"/>
+    <fullyQualifiedTypeName name="day0227.Const"/>
+    <fullyQualifiedTypeName name="day0227.Ex3WorkerMethod.MyInfo"/>
     <fullyQualifiedTypeName name="day0226.QuizObject"/>
+    <fullyQualifiedTypeName name="java.applet.AppletContext"/>
+    <fullyQualifiedTypeName name="day0227.Apple"/>
+    <fullyQualifiedTypeName name="day0227.Banana"/>
+    <fullyQualifiedTypeName name="day0227.Ex5ConstSetter"/>
+    <fullyQualifiedTypeName name="day0227.MyDate"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="day0227.YourInfo"/>
+    <fullyQualifiedTypeName name="day0227.Ex7InfoTest"/>
 </qualifiedTypeNameHistroy>

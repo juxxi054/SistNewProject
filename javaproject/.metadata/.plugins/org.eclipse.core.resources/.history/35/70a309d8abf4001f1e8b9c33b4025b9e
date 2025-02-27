@@ -1,0 +1,37 @@
+package day0226;
+
+public class QuizObjectTest {
+
+	public static void main(String[] args) {
+		/* 과정명: 쌍용 교육센터 자바교육 4강의장
+		 * =============================
+		 * 학생1정보
+		 * 이름:이주연
+		 * 나이:17
+		 * 지역:부산
+		 * 취미:그림그리기
+		 * 
+		 * 학생2정보
+		 * 이름:윤지안
+   		 * 나이:24
+   		 * 지역:서울
+   		 * 취미:요리하기
+		 */
+		
+	        // 과정명 출력
+	        System.out.println("과정명: " +String processName);
+	        System.out.println("=============================");
+	        
+	        // 학생1 정보
+	        Student student1 = new Student("이주연", 17, "부산", "그림그리기");
+	        System.out.println("학생1정보");
+	        student1.displayStudentInfo();
+	        
+	        // 학생2 정보
+	        Student student2 = new Student("윤지안", 24, "서울", "요리하기");
+	        System.out.println("학생2정보");
+	        student2.displayStudentInfo();
+         
+	}
+
+}

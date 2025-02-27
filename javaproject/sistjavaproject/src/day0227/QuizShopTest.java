@@ -1,0 +1,55 @@
+package day0227;
+
+import java.util.Calendar;
+
+class QuizShop
+{
+	private String name;
+	private int su;
+	private int price;
+	
+	static int cnt=0;
+	static String sangname;
+	
+	public void setData(String name,int su,int price)
+	{
+		this.name=name;
+		this.su=su;
+		this.price=price;
+	}
+	
+	public void getData()
+	{
+		cnt++;
+		System.out.println("입고물품:"+cnt);
+		System.out.println("상점명:"+QuizShop.sangname);
+		System.out.println("상품명:"+name);
+		System.out.println("수량:"+su+"개");
+		System.out.println("가격:"+price+"원");
+	}
+
+}
+public class QuizShopTest {
+
+	public static void main(String[] args) {
+		
+        
+		QuizShop s1=new QuizShop();
+		QuizShop s2=new QuizShop();
+		
+		s1.setData("땅콩버터",100,11000);
+		s2.setData("사과",200,5000);
+		
+		QuizShop.sangname="이마트강동지점";
+		
+		 Calendar cal=Calendar.getInstance();
+    	 int y=cal.get(Calendar.YEAR);
+    	 int m=cal.get(Calendar.MONTH)+1;
+    	 int d=cal.get(Calendar.DATE);
+    	 
+        System.out.println("[오늘의 입고상품("+y+"/"+m+"/"+d+")]");
+		s1.getData();
+		s2.getData();
+	}
+
+}

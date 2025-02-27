@@ -1,0 +1,62 @@
+package day0227;
+
+
+class QuizShop
+{
+	private String name;
+	private int su;
+	private int price;
+	
+	static int cnt=0;
+	static String sangname;
+	
+	public void setData(String name,int su,int price)
+	{
+		this.name=name;
+		this.su=su;
+		this.price=price;
+	}
+	
+	public void getData()
+	{
+		cnt++;
+		System.out.println("입고물품:"+cnt);
+		System.out.println("상점명:"+QuizShop.sangname);
+		System.out.println("상품명:"+name);
+		System.out.println("수량:"+su);
+		System.out.println("가격:"+price);
+	}
+}
+
+public class QuizShopTest {
+
+	public static void main(String[] args) {
+		/*
+		 * 
+		 * 결과물-입고물품 1,2,는 자동증가해야하며 상품명,수량,단가는 private으로
+		 * 자유롭게하고 결과만 동일하게
+		 * 날짜는 calendar에서 생성
+		 * 
+		 * [오늘의 입고상품(2025/02/27)]
+		 * 
+		 * 입고물품1
+		 * ===========
+		 * 상점명: 이마트 강동지점
+		 * 상품명: 땅콩버터
+		 * 수량:100개
+		 * 단가:11000원
+		 *==============
+		 *입고물품2
+		 *상점명:이마트강동지점
+		 *상품명:사과
+		 *수량:200개
+		 *단가:5000원
+		 * 
+		 */
+        
+		QuizShop s1=new QuizShop();
+		QuizShop s2=new QuizShop();
+		
+	}
+
+}
