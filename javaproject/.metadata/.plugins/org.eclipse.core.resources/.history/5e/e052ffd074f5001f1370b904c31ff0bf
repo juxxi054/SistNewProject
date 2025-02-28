@@ -1,0 +1,32 @@
+package day0228;
+
+public class Ex3ArrayConst {
+
+class Myshop{
+	
+	private String sangName;
+	private int su;
+	private int dan;
+	
+	//생성자 인자 3개
+	
+	public Myshop(String name,int su,int dan) {
+	    this. sangName=name;
+	    this.su=su;
+	    this.dan=dan;
+	  
+	}
+		
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Myshop[] ms= {
+			new Myshop("사과", 100, 4000),
+			new Myshop("오렌지", 200, 1500),
+			new Myshop("바나나", 150, 3000)
+		};
+	}
+
+}

@@ -1,0 +1,50 @@
+package day0228;
+
+class StudentScore{
+	private String stuNmae;
+	private int java;
+	private int html;
+	private int mysql;
+	public String getStuNmae() {
+		return stuNmae;
+	}
+	public void setStuNmae(String stuNmae) {
+		this.stuNmae = stuNmae;
+	}
+	public int getJava() {
+		return java;
+	}
+	public void setJava(int java) {
+		this.java = java;
+	}
+	public int getHtml() {
+		return html;
+	}
+	public void setHtml(int html) {
+		this.html = html;
+	}
+	public int getMysql() {
+		return mysql;
+	}
+	public void setMysql(int mysql) {
+		this.mysql = mysql;
+	}
+	
+	public void getTotal() 
+	{
+		int t=java+html+mysql;
+		return t;
+	}
+	
+	
+}
+
+
+public class ExQuize {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

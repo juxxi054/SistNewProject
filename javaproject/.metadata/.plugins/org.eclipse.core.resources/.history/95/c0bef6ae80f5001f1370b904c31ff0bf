@@ -1,0 +1,24 @@
+package day0228;
+
+class Sangjum{
+	
+	private String sangpum; 
+	private int price;
+	private String color;
+	
+	//생성자 3개
+    
+    public 
+	}
+	
+
+
+
+public class Ex4ArryConst {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
