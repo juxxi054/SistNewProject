@@ -3,133 +3,108 @@ package day0228;
 import java.util.Scanner;
 
 class StudentScore{
+	
 	private String stuName;
-	private int java;
-	private int html;
-	private int mysql;
+	private int java,html,mysql;
 	
-	public StudentScore() {}
-    
-	 public StudentScore(String stuName, int java, int html, int mysql) {
-	        this.stuName = stuName;
-	        this.java = java;
-	        this.html = html;
-	        this.mysql = mysql;
-	    }
-	
-	
-	
+	//setters & getters
 	public String getStuName() {
 		return stuName;
 	}
-
 	public void setStuName(String stuName) {
 		this.stuName = stuName;
 	}
-
 	public int getJava() {
 		return java;
 	}
-
 	public void setJava(int java) {
 		this.java = java;
 	}
-
 	public int getHtml() {
 		return html;
 	}
-
 	public void setHtml(int html) {
 		this.html = html;
 	}
-
 	public int getMysql() {
 		return mysql;
 	}
-
 	public void setMysql(int mysql) {
 		this.mysql = mysql;
 	}
-
-	public int getTotal() 
-	{
-		int t=java+html+mysql;
-		return t;
-	}
 	
+	//총점
+	public int getTotal()
+	{
+		return java+html+mysql;
+	}
+	//평균
 	public double getAverage()
 	{
 		return getTotal()/3.0;
 	}
 	
-	 public String getPungga()
-	 {
-		 double average = getAverage();
-         if(average>=90)
-         {
-        	 return "장학생";
-         }
-        	 else if (average>=80)
-        	 {
-        		return "우수생";
-        	 }
-        	 else {
-        		 return "재수강";
-        	 }
-         
-	 }
+	//평가
+	public String getPungga()
+	{
+		if(getAverage()>=90)
+			return "장학생";
+		else if(getAverage()>=80)
+			return "우수생";
+		else
+			return "재수강";
+	}
 }
 
 
 public class StudentScoreResult  {
+	
+	public static void writeScoreResult(StudentScore s)
+	{
+		System.out.println(s.getStuName()+"\t"+s.getJava()+"\t"+s.getHtml()+"\t"
+				+s.getMysql()+"\t"+s.getTotal()+"\t"+s.getAverage()+"\t"+s.getPungga());
+	}
+	
 
 	public static void main(String[] args) {
 		
 		Scanner sc=new Scanner(System.in);
+		int inwon;
+		String name;
+		int java,html,mysql;
+		StudentScore [] stu;
 		
-		System.out.print("학생 인원 수 입력: ");
-        int numStudents = scanner.nextInt();
-        scanner.nextLine();  // 버퍼 비우기
-        
-        System.out.println("이름    Java  Html  Mysql  총점   평균  평가");
-        System.out.println("==========================================");
-
-        // 학생 정보를 입력받고 출력하기
-        for (int i = 0; i < numStudents; i++) {
-            System.out.println("학생 " + (i + 1) + " 정보 입력:");
-
-            // 학생 이름과 점수 입력
-            System.out.print("이름: ");
-            String stuName = scanner.nextLine();
-            System.out.print("Java 점수: ");
-            int java = scanner.nextInt();
-            System.out.print("Html 점수: ");
-            int html = scanner.nextInt();
-            System.out.print("Mysql 점수: ");
-            int mysql = scanner.nextInt();
-            scanner.nextLine();  // 버퍼 비우기
-
-            // StudentScore 객체 생성
-            StudentScore student = new StudentScore(stuName, java, html, mysql);
-
-            // 학생의 총점, 평균, 평가 계산 후 출력
-            int total = student.getTotal();
-            double average = student.getAverage();
-            String pungga = student.getPungga();
-
-            // 결과 출력
-            System.out.printf("%-6s %-5d %-5d %-5d %-5d %.2f   %s\n", 
-                              student.getStuName(), 
-                              student.getJava(), 
-                              student.getHtml(), 
-                              student.getMysql(), 
-                              total, 
-                              average, 
-                              pungga);
-        }
-
-        scanner.close();
-    }
-
+		System.out.println("입력할 학생수는?");
+		inwon=Integer.parseInt(sc.nextLine());
+		
+		//인원수만큼 StudentScore클래스 배열할당
+		stu=new StudentScore[inwon];
+		
+		//인원수만큼 입력
+		for(int i=0;i<inwon;i++)
+		{
+			System.out.println(i+"번 학생 이름");
+			name=sc.nextLine();
+			System.out.println("Java,Html,Mysql점수 입력");
+			java=Integer.parseInt(sc.nextLine());
+			html=Integer.parseInt(sc.nextLine());
+			mysql=Integer.parseInt(sc.nextLine());
+			
+			//i번째 StudentScore 생성
+			stu[i]=new StudentScore();
+			stu[i].setStuName(name);
+			stu[i].setJava(java);
+			stu[i].setHtml(html);
+			stu[i].setMysql(mysql);
+		}
+		
+		System.out.println("**시험 결과 출력**");
+		System.out.println("학생명\tJava\tHtml\tMysql\t총점\t평균\t종합평가");
+		System.out.println("====================================================");
+		for(StudentScore s:stu)
+			writeScoreResult(s);
+		
+		
+	}
 
 }

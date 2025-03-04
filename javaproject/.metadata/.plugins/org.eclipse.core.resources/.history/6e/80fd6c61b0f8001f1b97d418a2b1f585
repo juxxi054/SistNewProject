@@ -1,0 +1,63 @@
+package day0304;
+
+class School{
+	
+	private static final String SCHOOLNAME="쌍용고등학교";
+	private String schoolAddr;
+	private int countStu;
+	private int countTeacher;
+	
+	public School() {
+		/*
+		 * 
+		 */
+	}
+	public School(String addr,int cntS,int cntT) {
+		this.schoolAddr=addr;
+		this.countStu=cntS;
+		this.countTeacher=cntT;
+		
+		
+	}
+	public String getSchoolAddr() {
+		return schoolAddr;
+	}
+	public void setSchoolAddr(String schoolAddr) {
+		this.schoolAddr = schoolAddr;
+	}
+	public int getCountStu() {
+		return countStu;
+	}
+	public void setCountStu(int countStu) {
+		this.countStu = countStu;
+	}
+	public int getCountTeacher() {
+		return countTeacher;
+	}
+	public void setCountTeacher(int countTeacher) {
+		this.countTeacher = countTeacher;
+	}
+	public static String getSchoolname() {
+		return SCHOOLNAME;
+	}
+}
+
+//출력 메서드
+public void writeScoolData()
+{
+	System.out.println("학교주소:"+this.schoolAddr);
+	System.out.println("학생수:"+this.countStu+",선생님수:"+this.countTeacher);
+}
+
+class student{
+	
+}
+
+public class Ex6InheritTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
