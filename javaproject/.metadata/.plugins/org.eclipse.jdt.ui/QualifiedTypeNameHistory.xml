@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Float"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
-    <fullyQualifiedTypeName name="java.util.Calendar"/>
-    <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
-    <fullyQualifiedTypeName name="javax.swing.Spring"/>
-    <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="java.lang.Double"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
@@ -33,7 +27,37 @@
     <fullyQualifiedTypeName name="day0228.Student"/>
     <fullyQualifiedTypeName name="day0228.StuInfos"/>
     <fullyQualifiedTypeName name="java.nio.file.spi.FileSystemProvider"/>
+    <fullyQualifiedTypeName name="day0305.interFood"/>
+    <fullyQualifiedTypeName name="day0305.InterWork"/>
+    <fullyQualifiedTypeName name="day0305.InterFood"/>
+    <fullyQualifiedTypeName name="day0305.InterImp1"/>
+    <fullyQualifiedTypeName name="day0305.Game"/>
+    <fullyQualifiedTypeName name="day0305.ain"/>
+    <fullyQualifiedTypeName name="day0305.ain.heyin"/>
+    <fullyQualifiedTypeName name="day0305.OuterObj.InnerObj"/>
+    <fullyQualifiedTypeName name="day0305.OuterObj"/>
+    <fullyQualifiedTypeName name="day0305.Outer.Inner2"/>
+    <fullyQualifiedTypeName name="day0305.Outer"/>
+    <fullyQualifiedTypeName name="day0305.Outer.Inner1"/>
+    <fullyQualifiedTypeName name="day0305.AbstEx"/>
+    <fullyQualifiedTypeName name="day0305.OuterEx"/>
+    <fullyQualifiedTypeName name="day0305.AbstAnony"/>
+    <fullyQualifiedTypeName name="day0305.Abst"/>
+    <fullyQualifiedTypeName name="day0305.SawonOuter.SudangInner"/>
+    <fullyQualifiedTypeName name="day0305.SawonOuter"/>
+    <fullyQualifiedTypeName name="day0305.SawonOuter.InputInner"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="day0305.Ex10NullPointException"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="java.io.InputStream"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="day0305.UserException"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.classfile.instruction.ReturnInstruction"/>
+    <fullyQualifiedTypeName name="java.security.PublicKey"/>
 </qualifiedTypeNameHistroy>
