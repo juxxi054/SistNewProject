@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Double"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
-    <fullyQualifiedTypeName name="day0226.Ex8Object"/>
-    <fullyQualifiedTypeName name="day0226.Ex9card"/>
-    <fullyQualifiedTypeName name="day0226.Ex10Student"/>
-    <fullyQualifiedTypeName name="day0226.Ex11Counter"/>
-    <fullyQualifiedTypeName name="day0226.Ex12Info"/>
-    <fullyQualifiedTypeName name="day0227.Ex1Object"/>
-    <fullyQualifiedTypeName name="day0227.Const"/>
-    <fullyQualifiedTypeName name="day0227.Ex3WorkerMethod.MyInfo"/>
     <fullyQualifiedTypeName name="day0226.QuizObject"/>
     <fullyQualifiedTypeName name="java.applet.AppletContext"/>
     <fullyQualifiedTypeName name="day0227.Apple"/>
@@ -46,18 +35,29 @@
     <fullyQualifiedTypeName name="day0305.SawonOuter.SudangInner"/>
     <fullyQualifiedTypeName name="day0305.SawonOuter"/>
     <fullyQualifiedTypeName name="day0305.SawonOuter.InputInner"/>
-    <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="day0305.Ex10NullPointException"/>
     <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
     <fullyQualifiedTypeName name="java.io.InputStream"/>
     <fullyQualifiedTypeName name="java.lang.Thread"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="day0305.UserException"/>
     <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
     <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.security.PublicKey"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="java.text.NumberFormat"/>
+    <fullyQualifiedTypeName name="day0306.Ex9FWriter"/>
+    <fullyQualifiedTypeName name="day0306.Ex8FileWriter"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.lang.classfile.instruction.ReturnInstruction"/>
-    <fullyQualifiedTypeName name="java.security.PublicKey"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="day0306.Ex10FireReadWrite"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

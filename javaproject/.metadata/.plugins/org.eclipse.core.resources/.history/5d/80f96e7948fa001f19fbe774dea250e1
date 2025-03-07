@@ -1,0 +1,16 @@
+package day0306;
+
+public class ExTokens {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     String str="장미,백합,튤립,후리지아,수국,안개꽃";
+     System.out.println();
+		
+		
+		
+		
+		
+	}
+
+}

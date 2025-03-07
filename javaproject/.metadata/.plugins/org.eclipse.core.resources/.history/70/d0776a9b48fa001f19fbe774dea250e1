@@ -1,0 +1,10 @@
+package day0306;
+
+public class Ex5FruitRead {
+
+	
+	 //메서드 만든후 출력하세요 제목은 과일 입고현황 과일명 입고수량 입고단가
+	public static void main(String[] args) {
+	}
+
+}

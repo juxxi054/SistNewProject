@@ -1,0 +1,17 @@
+package day0306;
+
+public class Ex2FireException {
+
+	
+	//score1.txt 의 총갯수구하고 총점 평균 구하기
+	
+	public static void scoreRead
+	{
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

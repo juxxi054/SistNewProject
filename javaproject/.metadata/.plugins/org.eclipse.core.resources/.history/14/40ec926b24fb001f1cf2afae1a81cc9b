@@ -1,0 +1,67 @@
+package day0307;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
+
+class MyShop{
+	
+	
+	private String sangName;
+	private int su;
+	private int price;
+
+  
+    public String getSangName() {
+		return sangName;
+	}
+
+
+	public void setSangName(String sangName) {
+		this.sangName = sangName;
+	}
+
+	public int getSu() {
+		return su;
+	}
+
+
+	public void setSu(int su) {
+		this.su = su;
+	}
+
+
+	public int getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+    
+	
+	public int total() {
+		return su*price;
+	}
+}
+	//ArrayList로 생성해서 할것!!
+			//MyShop은 디폴트 생성자로 생성할것
+			//메인에서 추가를 누르면 입력메서드 호출
+			//출력 모양은 번호 입고상품 수량 가격 총금액 
+
+/////////////////////////////
+
+public class QuizList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		 ArrayList<MyShop> shopList = new ArrayList<>();
+		 
+		 
+		 
+		
+	}
+
+}
