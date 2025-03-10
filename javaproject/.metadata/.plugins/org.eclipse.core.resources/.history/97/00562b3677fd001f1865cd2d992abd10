@@ -1,0 +1,56 @@
+package day0310;
+
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+//두개의 라벨과 텍스트필드  버튼만든후 각각 숫자를 넣고 클릭하면 라벨에 22+44=66 출력예정
+public class LayoutNull08 extends JFrame {
+
+	Container cp;
+	JLabel lblResult,lblnum1,lblnun2;
+	JTextField tfSul1,tfSul2;
+	JButton btnAdd;
+	
+	
+	
+	public LayoutNull08(String tittle) {
+		super(tittle); // JFrame 부모생성자를 통해서 창제목을 통해서 제목을 보게하자
+		
+		
+		//위치 너비
+		this.setBounds(200,100,800,800);
+		//색상
+		//this.setBackground(Color.blue);
+		//this.getContentPane().setBackground(Color.pink); //Color 클래스의 상수변수
+		//this.getContentPane(). setBackground(new Color(255,165,0));
+		
+		cp=this.getContentPane();
+		cp.setBackground(new Color(255,165,0));
+		
+		this.setVisible(true);
+	}
+
+	public  void initDesign()
+	{
+		//기본레이아웃 없애고 직접지정
+		this.setLayout(null);
+		lblnum1=new JLabel("숫자1: ");
+		lblnun2=new JLabel("숫자2: ");
+		
+		lblnum1.setBounds(20,30,70,50);
+		this.add(lblnum1);
+	}
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 new LayoutNull08("스윙레이아웃"); 
+	}
+
+}

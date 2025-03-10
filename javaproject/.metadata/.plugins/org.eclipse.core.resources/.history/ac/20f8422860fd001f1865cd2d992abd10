@@ -1,0 +1,42 @@
+package day0310;
+
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class BtnArryaEvent07  extends JFrame {
+
+	Container cp;	
+	//JButton [] btn= {"Red","Grean","Blue","Black","Pink","White"};
+	
+	
+	//생성자
+		
+			public BtnArryaEvent07(String tittle) {
+				super(tittle); // JFrame 
+			
+			
+			
+		
+			//위치 너비
+			this.setBounds(200,100,300,500);
+			
+			cp=this.getContentPane();
+			cp.setBackground(new Color(255,165,0));
+			
+			this.setVisible(true);
+		}
+
+			
+	
+	
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       new BtnArryaEvent07("레이아웃이벤트);
+	}
+
+}

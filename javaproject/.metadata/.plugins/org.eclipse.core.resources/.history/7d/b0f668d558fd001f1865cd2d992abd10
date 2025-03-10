@@ -1,0 +1,42 @@
+package day0310;
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class SwingBtnEvent4 extends JFrame implements ActionListener{
+ 
+	
+	 Container cp;   
+	 JButton btn1,btn2;
+
+	 //위치 너비
+    this.setBounds(200,100,300,500);
+    
+    cp=this.getContentPane();
+    cp.setBackground(new Color(255,165,0));
+    this.setVisible(true);
+
+ 
+ public void initDesign()
+ {
+	 this.setLayout(new FlowLayout());
+	 
+	 btn1=new JButton("<");
+	 btn2=new JButton(">");
+	 
+	
+ }
+
+    
+
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

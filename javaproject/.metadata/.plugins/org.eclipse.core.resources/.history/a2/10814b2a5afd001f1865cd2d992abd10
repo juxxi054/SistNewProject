@@ -1,0 +1,42 @@
+package day0310;
+
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+
+public class SwingIcon05 extends JFrame {
+
+	
+	Container cp;	
+	
+	//각각의 이미지아이콘
+	ImageIcon icon1=new ImageIcon("C:\\sist0217\\image\\swingimage\\LEFT.GIF");
+	ImageIcon icon2=new ImageIcon("C:\\sist0217\\image\\swingimage\\LEFTDOWN.GIF");
+	ImageIcon icon3=new ImageIcon("C:\\sist0217\\image\\swingimage\\LEFTROLLER.GIF");
+	ImageIcon icon4=new ImageIcon("C:\\sist0217\\image\\swingimage\\ANI08.GIF");
+	
+	
+	//생성자
+		
+		public SwingIcon05 (String tittle) {
+			super(tittle); 
+			
+			//위치 너비
+			this.setBounds(200,100,300,500);
+			
+			cp=this.getContentPane();
+			cp.setBackground(new Color(255,165,0));
+			
+			this.setVisible(true);
+		}
+
+			
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        new SwingIcon05("스윙아이콘");
+	}
+
+}

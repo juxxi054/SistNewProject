@@ -1,0 +1,62 @@
+package day0310;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class BtnArryaEvent07  extends JFrame {
+
+	Container cp;
+	JButton[] btn=new JButton[6];
+	String [] btnLabel= {"Red","Green","Blue","Black","Pink","White"};
+	Color[] btnColor= {Color.red,Color.green,Color.blue,Color.black,Color.pink,Color.white};
+	
+	//생성자
+		
+			public BtnArryaEvent07(String tittle) {
+				super(tittle); // JFrame 
+			
+			
+			
+		
+			//위치 너비
+			this.setBounds(200,100,300,500);
+			
+			cp=this.getContentPane();
+			cp.setBackground(new Color(255,165,0));
+			initDesign();
+			this.setVisible(true);
+		}
+
+			
+	//디자인
+	
+			public void initDesign()
+			{
+			//Panel 은 기본이 FlowLayout
+			JPanel panel=new JPanel();
+			panel.setBackground(Color.black);
+			
+			//패널을 상단에 배치
+			this.add(panel,BorderLayout.NORTH);
+			//this.add("North", panel);	
+			
+			
+			//버튼생성
+			for(int i=0;i<btn.length;i++)
+			{
+				btn[i]=new JButton(btnLabel[i]);
+			}
+
+				
+			}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       new BtnArryaEvent07("레이아웃이벤트");
+	}
+
+}
