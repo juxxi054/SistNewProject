@@ -38,6 +38,7 @@ public class SwingLayoutButtonEvent03 extends JFrame implements ActionListener{
 	   public void setDegign() {
 	 //레이아웃 변경
 		   this.setLayout(new FlowLayout());
+		   this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	//버튼생성
 		   btn1=new JButton("버튼#1");
 		   btn2=new JButton("버튼#2");

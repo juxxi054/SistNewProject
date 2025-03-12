@@ -29,6 +29,7 @@ public class LayoutNull08 extends JFrame {
 		
 		//위치 너비
 		this.setBounds(200,100,800,800);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		cp=this.getContentPane();
 		cp.setBackground(new Color(255,165,0));

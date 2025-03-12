@@ -28,7 +28,7 @@ public class BtnArryaEvent07  extends JFrame implements ActionListener{
 		
 			//위치 너비
 			this.setBounds(1000,100,900,500);
-			
+			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			cp=this.getContentPane();
 			cp.setBackground(new Color(255,165,0));
 			initDesign();

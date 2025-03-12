@@ -1,0 +1,47 @@
+package day0312;
+
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+
+public class QuizeRadioCheck  extends JFrame{
+	Container cp;
+	JRadioButton [] cbutton ; //하나만 선택하고 싶을때 
+	JCheckBox [] t=new JCheckBox[6];
+	JLabel[]  lb=new JLabel[4];
+	Color[] colors= {Color.red,Color.green,Color.black,Color.orange,Color.yellow};
+	JLabel lblmessage;
+	
+	
+	public QuizeRadioCheck(String title) {
+		super(title); //JFrame부모생성자를 통해서 창제목을 통해서 제목을 보게하자
+		
+		//위치 너비
+		this.setBounds(500, 100, 700, 700);
+		
+		cp=this.getContentPane();
+	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		cp.setBackground(Color.white);
+		initDesign();
+		this.setVisible(true);
+		
+	}
+	
+	public void initDesign()
+	{
+	 this.setLayout(null);	
+	 
+      String[] str1= {"빨강","검정","오렌지","노랑"};
+      JPanel
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+   new QuizeRadioCheck ("퀴즈");
+	}
+
+}

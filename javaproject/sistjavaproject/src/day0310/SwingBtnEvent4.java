@@ -21,6 +21,7 @@ public class SwingBtnEvent4 extends JFrame implements ActionListener{
 		
 		//위치 너비
 		this.setBounds(500, 100, 500, 300);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		cp=this.getContentPane();
 		cp.setBackground(new Color(127,255,212));

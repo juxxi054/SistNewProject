@@ -23,6 +23,8 @@ public class SwingEx1 extends JFrame{
 		//this.getContentPane(). setBackground(new Color(255,165,0));
 		
 		cp=this.getContentPane();
+		//메인프레임 종료
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		cp.setBackground(new Color(255,165,0));
 		
 		this.setVisible(true);

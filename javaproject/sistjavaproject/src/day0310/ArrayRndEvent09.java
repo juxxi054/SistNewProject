@@ -27,6 +27,7 @@ public class ArrayRndEvent09 extends JFrame{
 		
 		//위치 너비
 		this.setBounds(200,100,700,700);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//색상
 		//this.setBackground(Color.blue);
 		//this.getContentPane().setBackground(Color.pink); //Color 클래스의 상수변수

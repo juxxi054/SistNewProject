@@ -35,11 +35,16 @@ JButton btn1,btn2,btn3,btn4,btnAdd;
    }
    
    public void initDesign() {
-	   JPanel panel=new JPanel();
-	    panel.setLayout(new GridLayout(1, 2));  //7행1열
-		panel.setBackground(Color.black);
-		this.add(panel,BorderLayout.WEST);
-	   
+	   this.setLayout(null);
+		lblnum1=new JLabel("숫자1: ");
+		lblnum2=new JLabel("숫자2: ");
+		
+		lblnum1.setBounds(50,30,80,50);
+		this.add(lblnum1);
+		
+		
+		lblnum2.setBounds(50,80,80,50);
+		this.add(lblnum2);
 	   
    }
 
