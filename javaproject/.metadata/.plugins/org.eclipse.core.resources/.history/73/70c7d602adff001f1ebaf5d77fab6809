@@ -1,0 +1,91 @@
+package day0313;
+
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
+public class JTableIpgo extends JFrame{
+
+	Container cp;	
+	JTextField tfSang,tfSu,tfDan;
+	JButton btnAdd;
+	DefaultTableModel model;
+	JTable table;
+	//저장후 불러올 파일명
+	static final String FILENAME="C:\\sist0217\\work\\sanpumipgo.txt";
+	
+	
+	//생성자
+		
+		public JTableIpgo(String tittle) {
+			super(tittle); // JFrame 부모생성자를 통해서 창제목을 통해서 제목을 보게하자
+			
+			
+			//위치 너비
+			this.setBounds(200,100,300,500);
+			//색상
+			//this.setBackground(Color.blue);
+			//this.getContentPane().setBackground(Color.pink); //Color 클래스의 상수변수
+			//this.getContentPane(). setBackground(new Color(255,165,0));
+			
+			cp=this.getContentPane();
+			cp.setBackground(new Color(255,165,0));
+			initDesign();
+			
+			//테이블을 생성후 파일데이터 추가
+			
+			//종료시 테이블데이터 저장 
+			
+			
+			
+			
+			this.setVisible(true);
+			
+		}
+	
+		public void initDesign()
+		{
+			this.setLayout(null);
+			
+			JLabel lbl1=new JLabel("상품명");
+			JLabel lbl2=new JLabel("수량");
+			JLabel lbl3=new JLabel("단가");
+			
+			lbl1.setBounds(50,20,80,30);
+			this.add(lbl1);
+			
+			lbl2.setBounds(150,20,80,30);
+			this.add(lbl2);
+			
+			lbl3.setBounds(250,20,80,30);
+			this.add(lbl3);
+			
+			tfSang=new JTextField();
+			tfSang.setBounds(50,60,100,30);
+			this.add(tfSang);
+			
+			tfSu=new JTextField();
+			tfSu.setBounds(170,60,70,30);
+			this.add(tfSu);
+			
+			tfDan=new JTextField();
+			tfDan.setBounds(250,60,100,30);
+			this.add(tfDan);
+			
+			
+			
+		}
+		
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+          new JTableIpgo("스윙테이블 모델_상품입고");
+	}
+
+}
