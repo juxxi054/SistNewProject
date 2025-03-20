@@ -16,7 +16,11 @@ INSERT INTO FOODMENU VALUES (seq_food.NEXTVAL, '피자', 22000, '아키', '서�
 INSERT INTO FOODMENU VALUES (seq_food.NEXTVAL, '스테이크', 37000, '수피아', '논현동');
 
 
+<<<<<<< HEAD
 -- FOODORDER 테이블 생성 (FOODMENU 테이블이 먼저 생성된 후 실행해야 함)
+=======
+-- FOODORDER 테이블 생성 
+>>>>>>> 86447454e49cf265f6d7e8cf802a674c07c4ffdd
 CREATE TABLE FOODORDER (
     NO NUMBER(5) PRIMARY KEY,  
     ORDER_NAME VARCHAR2(20), 
@@ -28,9 +32,15 @@ CREATE TABLE FOODORDER (
 );
 
 INSERT INTO FOODORDER VALUES (seq_food.NEXTVAL, '안정아', 1, '역삼동');
+<<<<<<< HEAD
 INSERT INTO FOODORDER VALUES (seq_food.NEXTVAL, '하지웅', 4, '논현동'); -- 기존 데이터에 없는 8 → 4로 변경
 INSERT INTO FOODORDER VALUES (seq_food.NEXTVAL, '구준희', 2, '방배동'); -- 기존 데이터에 없는 7 → 2로 변경
 INSERT INTO FOODORDER VALUES (seq_food.NEXTVAL, '이주연', 3, '역삼동');
+=======
+INSERT INTO FOODORDER VALUES (seq_food.NEXTVAL, '하지웅', 4, '논현동');
+INSERT INTO FOODORDER VALUES (seq_food.NEXTVAL, '구준희', 7, '방배동'); 
+INSERT INTO FOODORDER VALUES (seq_food.NEXTVAL, '이주연', 10, '역삼동');
+>>>>>>> 86447454e49cf265f6d7e8cf802a674c07c4ffdd
 
 SELECT 
     FOODORDER.FNO AS 주문번호, 
