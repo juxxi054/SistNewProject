@@ -189,6 +189,40 @@ public void actionPerformed(ActionEvent e) {
 	
 	if(ob==btnDel)
 	{
+		//행번호 얻기
+		int row=table.getSelectedRow();
+		System.out.println(row);
+		
+		//선택 안했을경우
+		if(row==-1)
+		{
+			JOptionPane.showMessageDialog(this,"삭제할 행을 먼저 선택해주세요");
+			return; //메서드 종료
+		}
+		
+		
+		//선택한 행의 id(num)얻기
+		String num=(String)model.getValueAt(row,1);
+				System.out.println(num);
+				
+	   //db데이터 삭제 테이블 다시 출력
+		sql="delete from sawon where num=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			//num 바인딩
+			pstmt.setString(1, num);
+			//실행
+			pstmt.execute();
+			
+			//전체 데이터 다시 불러오기
+			this.sawonTableSelect(1);
+			
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		
 	}else if (ob==btnAdd)
 	{
@@ -212,7 +246,7 @@ public void actionPerformed(ActionEvent e) {
 			//실행
 			pstmt.execute();
 			
-			//테이븡 다시 호출
+			//테이블 다시 호출
 			this.sawonTableSelect(1);
 			
 		} catch (SQLException e1) {
