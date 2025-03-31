@@ -1,0 +1,21 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="view port" content="width=device -width initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    안녕하세요
+    우리는 오늘부터 html 공부를 시작합니다
+      <!--h(header) h1~h6까지가 있다-->
+      <h1 style="color:orange;">H1태그 입니다!!!<h1>
+     <h2 style="color: pink;">H1태그 입니다!!!<h2>
+    <h3>
+        h3태그 입니다
+        </h3>
+
+</body>
+</html>
