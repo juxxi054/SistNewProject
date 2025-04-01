@@ -6,24 +6,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gaegu&family=Hi+Melody&family=Nanum+Myeongjo&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <title>Document</title>
     <style>
-
-div.a{
+        div.a{
             font-size: 2em;
             font-family: 'Dongle';
         }
 
         div.b>figure{
-            float: left;
+            float: left;  /* 가로방향 정렬 */
         }
 
         div.b img{width: 200px; height: 200px;}
+
+        h3.c{clear: both;} /*  float: left;속성을 헤제 */
+
+        div.d{
+            display: flex;
+            flex-direction: row;
+            /* row: 왼쪽정렬,row-reverse :오른쪽정렬 column:세로정렬렬 */
+        }
+
+        div.d img{
+            border: 2px solid greenyellow;
+            box-shadow: 15px 15px 15px gray;
+            border-radius: 10px 40px 80px 20px; /*왼쪽 상단모서리부터 시계방향*/
+        }
 
     </style>
 
 
 </head>
 <body>
-  <img src="../day0331/음식 이미지/12.jpg" width="200" border="1" align="left" hspace="20">
+  <img src="../day0331/음식 이미지/12.jpg" width="100" border="1" align="left" hspace="20">
   <div>
 
     순두부찌개<br>콘치즈<br>샌드위치<br>망고빙수
@@ -45,7 +58,17 @@ div.a{
     <figcaption><b>리조토 </b></figcaption>
 </figure>
 
+<h3 class="c">안녕하세요  html 2일차 </h3>
 
+</div>
+
+<div class="d">
+    <figure>
+      <img src="../day0331/html_img/tv_program_img2.jpg" width="150">
+      <figcaption><d>더 지니어스  </d></figcaption>
+     
+
+    </figure>
 
 </div>
 </body>

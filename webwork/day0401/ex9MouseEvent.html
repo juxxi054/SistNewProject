@@ -1,0 +1,21 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="view port" content="width=device -width initial-scale=1.0">
+    <link rel="../">
+ <title>Document</title>
+</head>
+<body>
+
+<h2>이미지에서 마우스 이벤트_img 태그안에서 이벤트안의 this는 자기자신 즉 img태그 </h2>
+<img src="../IMAGE/만화 이미지/07.png" width="400"
+onmouseover="this.src='../만화 이미지/08.png'"
+onmouseout="this.src='../만화 이미지/07.png'">
+<br>
+<img src="../IMAGE/만화 이미지/08.png"
+onmouseenter="this.src='../Food/2.jpg'"
+onmouseleave="this.src='../Food/1.jpg'">
+
+</body>
+</html>

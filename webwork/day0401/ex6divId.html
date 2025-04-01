@@ -1,0 +1,98 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="view port" content="width=device -width initial-scale=1.0">
+   <title>Document</title>
+<style>
+/*클래스는 동시에 여러군데 사용한다 (.으로 만듬)
+아이디는 #으로 만다는데 딱 한군데서만 사용가능 */
+
+.nice{
+    color: magenta;
+}
+
+div.nice{
+    background-color: aquamarine;
+    border: 2px dotted pink;
+
+}
+
+#sist{
+    position: absolute; /*절대고정위치*/
+    top: 200px;
+    left: 100px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid gray;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+.hello{
+    height: 50px;
+    background-color: brown;
+    color: white;
+}
+
+/*빨강색 박스에 하얀글씨로 나타나게 글씨는 가로세로 정가운데*/
+#box{
+    position: absolute;
+    top: 400px;
+    left: 200px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 300px;
+    border: 5px solid gray;
+    background-color: red;
+    color: white;
+}
+
+.boxall{
+    position: absolute;
+    top: 700px;
+    left: 200px;
+}
+
+#boxa{
+    /*float속성은 left,right,none 가 있다
+    요소를 분리시킬수 있는데 중심속성이 없다
+    중심으로 분리시킬때는 margin:auto*/
+
+    float: left;
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+}
+
+#boxb{
+    /*float속성은 left,right,none 가 있다
+    요소를 분리시킬수 있는데 중심속성이 없다
+    중심으로 분리시킬때는 margin:auto*/
+
+    float: left;
+    width: 200px;
+    height: 200px;
+    background-color: plum;
+}
+
+#boxc{
+    /*float속성은 left,right,none 가 있다
+    요소를 분리시킬수 있는데 중심속성이 없다
+    중심으로 분리시킬때는 margin:auto*/
+
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+
+</style>
+
+</head>
+<body>
+<div class="boxall">
+    <div id="boxa">박스a</div>
+    <div id="boxb">박스b</div>
+    <div id="boxc">박스c</div>
+    </div>
