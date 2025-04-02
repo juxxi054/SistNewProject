@@ -1,0 +1,89 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="view port" content="width=device -width initial-scale=1.0">
+       <style>
+        table{
+            border: 2px solid gray;
+            width: 10px;
+        }
+       </style>
+ <title>Document</title>
+</head>
+<body>
+    <table>
+        <caption><b>Radio&check </b></caption>
+        <tr>
+            <tb>
+            <b>현재 수업중인 강의장</b>
+            <!--radio name이 동일해야한다-->
+            <input type="radio" name="grade" value="1강의장">1강의장&nbsp; 
+            <input type="radio" name="grade" value="2강의장">2강의장&nbsp; 
+            <input type="radio" name="grade" value="3강의장">3강의장&nbsp; 
+            <input type="radio" name="grade" value="4강의장">4강의장&nbsp; 
+        </tb>
+        </tr>
+
+        <tr>
+           <td>
+            <b> 가능한 프로그램 언어</b>
+            <input type="checkbox" name="lang" value="C언어">C언어&nbsp;
+            <input type="checkbox" name="lang" value="JAVA">JAVA&nbsp;
+            <input type="checkbox" name="lang" value="ORACLE">ORACLE&nbsp;
+            <input type="checkbox" name="lang" value="MYSQL">MYSQL&nbsp;
+
+           </td> 
+        </tr>
+
+        <tr>
+            <td>
+                <b>좋아하는 이미지지</b>
+                <input type="file">
+            </td>
+        </tr>
+       
+        <tr>
+            <td>
+                <b>함께 프로젝트 하고싶은 사람 </b>
+                <select>
+                    <option value="희진">희진</option>
+                    <option value="정미">정미</option>
+                    <option value="채린">채린</option>
+                    <option value="성진">성진</option>
+                </select>
+            </td>
+        </tr>
+<tr>
+    <td>
+        <b>당신의 신장은 몇 cm 입니까?</b>
+        <input type="number" name="height" min="150" max="210" step="2"
+        value="150">cm
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <b>당신의 몸무게는 몇 kg 입니까?</b>
+        <input type="number" name="wight" min="40" max="120" step="2"
+        value="50">kg
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <b>당신의 퍼스널 컬러는?</b>
+        <input type="color">
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <b>날짜 선택</b>
+        <input type="date" value="2022-12-24">
+    </td>
+</tr>
+
+    </table>
+</body>
+</html>

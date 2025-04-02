@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link{
+            color: black;
+            text-decoration: none;
+        }
+
+        a:visited{
+            color: chartreuse;
+        }
+
+        a:hover{
+            color: red;
+            text-decoration: underline;
+        }
+
+     ul li{list-style: none;}
+
+     li.main{float: left;}
+
+     li.main>a{
+        display: block;
+        width: 200px;
+        color: blueviolet;
+        font-weight: bold;
+     }
+
+     ul.submenu{
+        font-size: 12px;
+        margin-top: 15px;
+
+     }
+
+     ul.submenu>li>a{
+
+        display: block;
+        width: 180px;
+        height: 20px;
+        color: aqua;
+     }
+
+     ul.submenu>li>a:hover{
+        color: chocolate;
+     }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="main"> 
+            <a href="#">1일차 </a>
+        <ul class="submenu"> 
+        <li>
+            <a href="../day0401/ex2CssLink.html">어제 2번예제</a>
+        </li>
+        <li>
+            <a href="../day0401/ex4AtagCss.html">어제 4번예제</a>
+        </li>
+        <li>
+            <a href="../day0401/ex6divId.html">어제 6번예제</a>
+        </li>
+        </ul>
+    </li>
+    </ul>
+
+    <ul>
+        <li class="main"> 
+            <a href="#">2일차 </a>
+        <ul class="submenu"> 
+        <li>
+            <a href="../day0401/ex3cssLotto.html">어제 3번예제</a>
+        </li>
+        <li>
+            <a href="../day0401/ex6divId.html">어제 6번예제</a>
+        </li>
+        <li>
+            <a href="../day0401/ex7backGround.html0">어제 7번예제</a>
+        </li>
+        </ul>
+    </li>
+    </ul>
+
+</body>
+</html>
