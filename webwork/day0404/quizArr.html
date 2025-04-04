@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--문제
+1.총 5개의 이미지를 배열형태로 넣기(폴더 형태로)
+2.prompt로 "출력할 이미지의 인덱스 번호를 입력하세요 라고 출력 0번을 입력하면 0번이미지 출력
+3.없는 인덱스 번호 쓰면 '해당번호의 이미지는 없습니다'"-->
+
+<button id="btnImg" class="btn btn-green" type="button" oneclick="showImage()"></button>
+<hr>
+<div id="result">이미지 출력하는 곳</div>
+
+<script>
+
+
+      var arr3=new Array();
+        arr3.push("../IMAGE/연예인/1.jpg");
+        arr3.push("../IMAGE/연예인/13.jpg");
+        arr3.push("../IMAGE/연예인/14.jpg");
+        arr3.push("../IMAGE/연예인/19.jpg");
+
+        var s="배열갯수: "+arr3.length+"<br>";
+
+        for(var i=0;i<arr3.length;i++){
+            s+="<img src='"+arr3[i]+"'>";
+
+        }
+
+        document.write(s);
+
+  function showImage() {
+    const index = prompt("출력할 이미지의 인덱스 번호를 입력하세요 (0~4)");
+    const resultDiv = document.getElementById('result');
+
+    if (index !== null && !isNaN(index) && index >= 0 && index < images.length) {
+      resultDiv.innerHTML = `<img src="${images[index]}" alt="이미지 ${index}">`;
+    } else {
+      resultDiv.innerHTML = "해당 번호의 이미지는 없습니다.";
+    }
+  }
+</script>
+
+</body>
+</html>
+</body>
+</html>

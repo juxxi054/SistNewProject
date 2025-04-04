@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> 배열 초기값으로 지정</h3>
+    <script>
+     var arr1=[
+        "../IMAGE/연예인/7.jpg",
+        "../IMAGE/연예인/8.jpg",
+        "../IMAGE/음식 이미지/4.jpg",
+        "../IMAGE/음식 이미지/5.jpg",
+    ];
+
+     var s="배열갯수:"+arr1.length+"<br>";
+
+     for(var i=0;i<arr1.length;i++)
+     {
+        s+="<img src='"+arr1[i]+"'>";
+     }
+
+     document.write(s);
+
+    </script>
+
+    <h3>배열_new Array로 선언</h3>
+    <script>
+        var arr2=new Array(4);
+
+        arr2[0]="../IMAGE/연예인/1.jpg";
+        arr2[1]= "../IMAGE/연예인/2.jpg";
+         arr2[2]="../IMAGE/음식 이미지/8.jpg";
+         arr2[3]= "../IMAGE/음식 이미지/9.jpg";
+    
+var s="배열갯수:"+arr2.length+"<br>";
+
+for(var i=0;i<arr2.length;i++)
+{
+    s+="<img src='"+arr2[i]+"'>";
+}
+
+document.write(s);
+    </script>
+
+    <h3>배열_newArray로 선언_push</h3>
+    <script>
+        var arr3=new Array();
+        arr3.push("../IMAGE/연예인/1.jpg");
+        arr3.push("../IMAGE/연예인/13.jpg");
+        arr3.push("../IMAGE/연예인/14.jpg");
+        arr3.push("../IMAGE/연예인/19.jpg");
+
+        var s="배열갯수: "+arr3.length+"<br>";
+
+        for(var i=0;i<arr3.length;i++){
+            s+="<img src='"+arr3[i]+"'>";
+
+        }
+
+        document.write(s);
+    </script>
+</body>
+</html>
