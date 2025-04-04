@@ -11,38 +11,31 @@
 2.prompt로 "출력할 이미지의 인덱스 번호를 입력하세요 라고 출력 0번을 입력하면 0번이미지 출력
 3.없는 인덱스 번호 쓰면 '해당번호의 이미지는 없습니다'"-->
 
-<button id="btnImg" class="btn btn-green" type="button" oneclick="showImage()"></button>
+<button id="btnImg" class="btn btn-green" type="button" onclick="showImage()">이미지 선택</button>
 <hr>
 <div id="result">이미지 출력하는 곳</div>
 
 <script>
+    var arr3 = new Array();
+    arr3.push("../IMAGE/연예인/1.jpg");
+    arr3.push("../IMAGE/연예인/13.jpg");
+    arr3.push("../IMAGE/연예인/14.jpg");
+    arr3.push("../IMAGE/연예인/19.jpg");
 
+    function showImage() {
+        var index = prompt("출력할 이미지의 인덱스 번호를 입력하세요 (0~4)");
 
-      var arr3=new Array();
-        arr3.push("../IMAGE/연예인/1.jpg");
-        arr3.push("../IMAGE/연예인/13.jpg");
-        arr3.push("../IMAGE/연예인/14.jpg");
-        arr3.push("../IMAGE/연예인/19.jpg");
+      
+        if (index === null) return; 
 
-        var s="배열갯수: "+arr3.length+"<br>";
-
-        for(var i=0;i<arr3.length;i++){
-            s+="<img src='"+arr3[i]+"'>";
-
+        index = parseInt(index);
+        if (!isNaN(index) && index >= 0 && index < arr3.length) {
+            document.getElementById("result").innerHTML =
+                "<img src='" + arr3[index] + "' alt='이미지' style='max-width:300px;'>";
+        } else {
+            alert("해당 번호의 이미지는 없습니다.");
         }
-
-        document.write(s);
-
-  function showImage() {
-    const index = prompt("출력할 이미지의 인덱스 번호를 입력하세요 (0~4)");
-    const resultDiv = document.getElementById('result');
-
-    if (index !== null && !isNaN(index) && index >= 0 && index < images.length) {
-      resultDiv.innerHTML = `<img src="${images[index]}" alt="이미지 ${index}">`;
-    } else {
-      resultDiv.innerHTML = "해당 번호의 이미지는 없습니다.";
     }
-  }
 </script>
 
 </body>
