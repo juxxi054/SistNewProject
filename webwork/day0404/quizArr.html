@@ -1,44 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>이미지 출력</title>
 </head>
-<body>
-    <!--문제
-1.총 5개의 이미지를 배열형태로 넣기(폴더 형태로)
-2.prompt로 "출력할 이미지의 인덱스 번호를 입력하세요 라고 출력 0번을 입력하면 0번이미지 출력
-3.없는 인덱스 번호 쓰면 '해당번호의 이미지는 없습니다'"-->
-
-<button id="btnImg" class="btn btn-green" type="button" onclick="showImage()">이미지 선택</button>
-<hr>
-<div id="result">이미지 출력하는 곳</div>
-
 <script>
+    // 이미지 배열
     var arr3 = new Array();
     arr3.push("../IMAGE/연예인/1.jpg");
     arr3.push("../IMAGE/연예인/13.jpg");
     arr3.push("../IMAGE/연예인/14.jpg");
     arr3.push("../IMAGE/연예인/19.jpg");
+    arr3.push("../IMAGE/연예인/20.jpg"); // 총 5개 이미지로 맞춤
 
     function showImage() {
         var index = prompt("출력할 이미지의 인덱스 번호를 입력하세요 (0~4)");
+        var r = document.getElementById("result");
 
-      
-        if (index === null) return; 
-
-        index = parseInt(index);
-        if (!isNaN(index) && index >= 0 && index < arr3.length) {
-            document.getElementById("result").innerHTML =
-                "<img src='" + arr3[index] + "' alt='이미지' style='max-width:300px;'>";
+        // 입력값이 유효한지 검사
+        if (index < 0 || index > 4 || isNaN(index)) {
+            r.innerHTML = "해당 번호의 이미지는 없습니다.";
         } else {
-            alert("해당 번호의 이미지는 없습니다.");
+            r.innerHTML = "<img src='" + arr3[index] + "' alt='선택한 이미지' style='max-width:300px;'>";
         }
     }
 </script>
-
-</body>
-</html>
+<body>
+    <button id="btnImg" type="button" onclick="showImage()">이미지 선택</button>
+    <hr>
+    <div id="result">이미지 출력하는 곳</div>
 </body>
 </html>
