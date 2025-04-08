@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 선택</title>
+    <style>
+        #img1 {
+            width: 200px;
+            position: absolute;
+            left: 400px;
+            top: 50px;
+            border: 10px solid orange;
+            border-radius: 30px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            const img = document.getElementById("img1");
+            const select = document.getElementById("imgSelect");
+            const radios = document.getElementsByName("line");
+            const out = document.getElementById("out");
+
+            select.onchange = function () {
+                img.src = select.value;
+                out.innerHTML = "선택된 이미지: " + select.options[select.selectedIndex].text;
+            };
+
+            for (let radio of radios) {
+                radio.onclick = function () {
+                    img.style.borderStyle = this.value;
+                    out.innerHTML = "테두리 스타일: " + this.value;
+                };
+            }
+        };
+    </script>
+</head>
+<body>
+    <h3>이미지를 선택하세요</h3>
+    <select id="imgSelect">
+        <option value="../IMAGE/logoImg/shoe01.png">구두#1</option>
+        <option value="../IMAGE/logoImg/shoe02.png">구두#2</option>
+        <option value="../IMAGE/logoImg/shoe03.png">구두#3</option>
+        <option value="../IMAGE/logoImg/shoe04.png" selected>구두#4</option>
+    </select>
+    <br><br>
+
+    <h3>이미지의 선종류</h3>
+    <input type="radio" value="solid" name="line">Solid&nbsp;
+    <input type="radio" value="dotted" name="line">Dot&nbsp;
+    <input type="radio" value="dashed" name="line">Dash&nbsp;
+    <input type="radio" value="inset" name="line">Inset&nbsp;
+    <input type="radio" value="groove" name="line">Groove&nbsp;
+    <br><br>
+
+    <div id="out">테두리 스타일: 기본</div>
+    <img src="../IMAGE/logoImg/a06.png" id="img1">
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sangpum{width: 100px; height: 100px;}
+        .result_sangpum{width: 300px; height: 300px;}
+        #result-div>img{
+            position: absolute;
+            left: 350px;
+            top: 300px;
+            width: 600px;
+            height: 450px;
+            border: 10px dotted pink;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // 모든 작은 이미지를 가져옴
+            var thumbnails = document.getElementsByClassName("sangpum");
+            var resultImg = document.getElementById("img_result");
+
+            // 각 이미지에 클릭 이벤트 추가
+            for (let i = 0; i < thumbnails.length; i++) {
+                thumbnails[i].onclick = function () {
+                    let selimg = this.getAttribute("src");
+                    resultImg.setAttribute("src", selimg);
+                };
+            }
+        };
+    </script>
+</head>
+<body>
+
+    <div id="gallery_div">
+        <img src="../IMAGE/logoImg/acc01.png" class="sangpum" id="img1">
+        <img src="../IMAGE/logoImg/acc02.png" class="sangpum" id="img2">
+        <img src="../IMAGE/logoImg/acc03.png" class="sangpum" id="img3">
+        <img src="../IMAGE/logoImg/bag01.png" class="sangpum" id="img4">
+        <img src="../IMAGE/logoImg/bag02.png" class="sangpum" id="img5">
+        <img src="../IMAGE/logoImg/bag03.png" class="sangpum" id="img6">
+        <img src="../IMAGE/logoImg/bag04.png" class="sangpum" id="img7">
+    </div>
+
+    <div id="result-div">
+        <img src="../IMAGE/logoImg/a06.png" class="result_sangpum" id="img_result">
+    </div>
+
+</body>
+</html>

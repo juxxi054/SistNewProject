@@ -1,4 +1,5 @@
 div.lotto{
+    float: left;
     width: 100px;
     height: 100px;
     margin-left: 50px;
