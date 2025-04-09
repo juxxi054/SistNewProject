@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+    <script>
+        var myimg;
+        var xpos=500;
+        var ypos=300;
+        var ms=100;
+        var inter;
+
+        window.onload=function(){
+            myimg=document.getElementById("myimg");
+           myimg=style.top=ypos+"px";
+           myimg=style.left=xpos+"px";
+
+            //키보드 아스키코드값 확인
+
+        window.onkeyup=function(e){
+            console.log(e.keyCode);
+        }
+
+
+        switch(e.keyCode){
+            case 38: 
+                ypos-=10;
+                myimg.style.top=ypos+"px";
+                break;
+
+                case 40: 
+                ypos+=10;
+                myimg.style.top=ypos+"px";
+                break;
+                case 39: 
+                ypos-=10;
+                myimg.style.left=ypos+"px";
+                case 13: 
+                xpos=500;
+                ypos=300;
+                myimg.style.top=ypos+"px";
+                myimg.style.left=xpos+"px";
+
+        }
+
+            document.getElementById("btngo").onclick=function(){
+                setInterval(function(){
+                    myimg.style.left=xpos+"px"
+                    xpos+=10;
+                },ms)
+            }
+        }
+
+        document.getElementById("btnstop").onclick=function(){
+            clearInterval(inter); 
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <img src="../IMAGE/만화 이미지/10.png" id="myimg">
+    <br><br>
+    <button type="button" id="btngo">go</button>
+    <button type="button" id="btnstop">stop</button>
+</body>
+</html>

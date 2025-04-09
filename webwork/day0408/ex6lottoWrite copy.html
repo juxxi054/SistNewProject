@@ -13,8 +13,13 @@
             var lotto=new Array(6);
             var out=document.getElementById("out");
 
+
+
             document.getElementById("btnlotto").onclick=function(){
-                for(var i=0;i<lotto.length;i++){
+
+                inter=setInterval(function(){
+
+                    for(var i=0;i<lotto.length;i++){
                     //1~45사이의 난수발생시켜 배열에 넣기기
                     lotto[i]=parseInt(Math.random()*45)+1; 
 
@@ -38,8 +43,11 @@
                 }
 
                 console.log(lotto);
-
                 
+                document.getElementById("btnstop").onclick=function(){
+                clearInterval(inter); //setInterval멈춤춤
+            }
+
                 //div안에 출력
                 var s="";
 
@@ -48,6 +56,15 @@
                 }
 
                 out.innerHTML=s;
+                },1000);
+                
+            }
+
+
+
+            //stop버튼
+            document.getElementById("btnstop").onclick=function(){
+                clearInterval(inter);
             }
                
         }
@@ -55,9 +72,9 @@
     </script>
 </head>
 <body>
-    <button type="button" class="btn btn-outline-primary" id="btnlotto">로또숫자 구하기</button>
+    <button type="button" class="btn btn-outline-primary" id="btnlotto" style="width: 180px;">자동로또출력기기</button>
+    <button type="button" class="btn btn-outline-primary" id="btnstop" style="width: 180px;">멈춤</button>
 
     <div id="out"></div>
-
 </body>
 </html>

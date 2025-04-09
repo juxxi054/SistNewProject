@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #photo{
+            width: 400px;
+            height: 300px;
+        }
+        #msg{
+            font-size: 20px;
+            margin-top: 10px;
+            margin-left: 20px
+        }
+    </style>
+    <script>
+     window.onload=function(){
+     
+     var p=document.getElementById("photo");
+     var m=document.getElementById("msg");
+     
+     //메세지배열
+     var msgarr=["자바스크립트 최고","오늘은 벚꽃만개","내일부터 비와요"];
+
+
+     //1초마다 photo의 사진이 1~20중에 랜덤하게 변경하도록 
+      setInterval(function(){
+        
+      var rnd=parseInt(Math.random()*20)+1;
+      //이미지 변경
+      p.setAttribute("src","../IMAGE/연예인/"+rnd+".jpg");  
+      },1000);
+ 
+     }
+
+     //0.5초 마다 랜덤하게 메세지 변경 0~2사이의 랜덤값으로 변경
+
+     setInterval(()=>{
+     var msgidx=parseInt(Math.random()*3);
+          
+    //0~5사이의 랜덤값
+     var colidx=parseInt(Math.random()*6);
+    //메세지의 컬러를 랜덤하게 변경경
+     m.style.color=colarr[colidx];
+     //메세지를 랜덤하게 변경
+     m.innerHtml=msgarr[msgidx];
+     },500);
+
+
+    </script>
+</head>
+<body>
+    <img src="../IMAGE/연예인/13.jpg" id="photo">
+    <div id="msg">랜덤하게 메세지 출력</div>
+</body>
+</html>

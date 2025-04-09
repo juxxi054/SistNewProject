@@ -15,14 +15,32 @@
             font-size: 10pt;
         }
     </style>
+    <script>
+        // function goSelect(per){
+        //      document.getElementById("perout").innerText=per;
+        // }
+        function goSelect(){
+            document.getElementById("perout").innerText="얘랑 하고싶다: "+frm.person.value;
+        }
+        function goWeight(w_num){
+            document.getElementById("weightout").innerText=w_num;
+        }
+        function goColor(){
+            document.getElementById("col").style.background=frm.col.value;
+        }
+        function goDate(){
+            document.getElementById("dateout").innerHTML="날짜: "+frm.day.value;
+        }
+    </script>
 </head>
 <body>
+    <form name="frm">
     <table>
         <caption><b>Radio&Check</b></caption>
         <tr>
            <td>
             <b>현재 수업중인 강의장</b>
-            <!-- radio는 name이 동일해야 한다 단일선택택-->
+            <!-- radio는 name이 동일해야 한다 단일선택-->
               <input type="radio" name="grade" value="1강의장">1강의장&nbsp;
               <input type="radio" name="grade" value="2강의장">2강의장&nbsp;
               <input type="radio" name="grade" value="3강의장">3강의장&nbsp;
@@ -52,7 +70,7 @@
         <tr>
             <td>
                 <b>함께 프로젝트 하고 싶은 사람</b>
-                <select>
+                <select name="person" onchange="goSelect()">
                     <option value="민규">민규</option>
                     <option value="주희">주희</option>
                     <option value="태민">태민</option>
@@ -61,6 +79,7 @@
                     <option value="현정">현정</option>
                     <option value="용희">용희</option>
                 </select>
+                <span id="perout"></span>
             </td>
         </tr>
 
@@ -76,23 +95,25 @@
             <td>
                 <b>당신의 몸무게는 몇 Kg입니까?</b>
                 <input type="number" name="weight" min="40" max="120" step="2"
-                value="50">Kg
+                value="50" onchange="goWeight(this.value)"><span id="weightout">0</span> Kg
             </td>
         </tr>
 
         <tr>
             <td>
-                <b>당신의 퍼스널 컬러는?</b>
-                <input type="color">
+                <b id="col">당신의 퍼스널 컬러는?</b>
+                <input type="color" name="col" onchange="goColor()">
             </td>
         </tr>
 
         <tr>
             <td>
                 <b>날짜선택</b>
-                <input type="date" value="2022-12-24">
+                <input type="date" value="2022-12-24" name="day" onchange="goDate()">
+                <span id="dateout"></span>
             </td>
         </tr>
     </table>
+</form>
 </body>
 </html>
