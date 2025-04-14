@@ -1,11 +1,8 @@
 div.lotto{
-    float: left;
     width: 100px;
     height: 100px;
     margin-left: 50px;
     margin-top: 50px;
-    border: solid 3px #c71573;
-    background-color: palevioletred;
     text-align: center;
     line-height: 100px;
     font-size: 3em;
