@@ -118,36 +118,34 @@ public class GaipDao {
 	  		
 	//수정
 	
-		public void updateGaip (GaipDto dto) {
-			
+		//수정
+		public void updateGaip(GaipDto dto)
+		{
 			Connection conn=db.getConnection();
-	  		PreparedStatement pstmt=null;
-	  		
-	  		String sql="update gaip set writer=?,content=?,emot=? where num=?";
-	  		
-             try {
-				pstmt=conn.prepareStatement(sql);
-				
+			PreparedStatement pstmt=null;
 			
-				pstmt.setString(3,dto.getAge());
-				pstmt.setString(4,dto.getHp());
-				pstmt.setString(5,dto.getLang());
-				pstmt.setString(6,dto.getBirth());
-		     
+			String sql="update gaip set name=?,age=?,hp=?,lang=?,birth=? where num=?";
+			
+			try {
+				pstmt=conn.prepareStatement(sql);
+				//?바인딩
+				pstmt.setString(1, dto.getName());
+				pstmt.setString(2, dto.getAge());
+				pstmt.setString(3, dto.getHp());
+				pstmt.setString(4, dto.getLang());
+				pstmt.setString(5, dto.getBirth());
+				pstmt.setString(6, dto.getNum());
 				
 				pstmt.execute();
-	  			
-       		} catch (SQLException e) {
-       			// TODO Auto-generated catch block
-       			e.printStackTrace();
-       		}finally {
-       			db.dbClose(pstmt, conn);
 				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				db.dbClose(pstmt, conn);
 			}
-			}
-  			
-  			
-  			
-  			
+			
 		}
-
+		
+		
+	}

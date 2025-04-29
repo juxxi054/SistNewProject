@@ -1,3 +1,4 @@
+<%@page import="gaip.GaipDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,6 +11,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+GaipDao dao= new GaipDao();
 
+String num=request.getParameter("num");
+//delete 메서드 호출
+dao.deleteGaip(num);
+
+// 삭제 후 목록 페이지로 리다이렉트
+response.sendRedirect("gaipList.jsp");
+
+%>
 </body>
 </html>
