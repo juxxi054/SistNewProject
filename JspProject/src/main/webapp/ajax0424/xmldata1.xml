@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+   <person no="1">
+   <name>이지안</name>
+   <addr>서울시 서초구</addr>
+   </person>
+   
+   <person no="2">
+   <name>김정훈</name>
+   <addr>서울시 강남구</addr>
+   </person>
+   
+   <person no="3">
+   <name>서진영</name>
+   <addr>서울시 관악구</addr>
+   </person>
+   
+   <person no="4">
+   <name>김한경</name>
+   <addr>서울시 서초구</addr>
+   </person>
+</data>
