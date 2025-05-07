@@ -34,7 +34,7 @@ public class DbConnect {
 		 
 		 
 		 try {
-			conn=DriverManager.getConnection(URL,"joo","a1234");
+			conn=DriverManager.getConnection(URL,"juxxi","a1234");
 			//System.out.println("오라클 연결 성공");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

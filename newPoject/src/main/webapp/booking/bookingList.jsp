@@ -1,7 +1,5 @@
-<%@page import="java.util.List"%>
 <%@page import="booking.BookingDto"%>
-<%@page import="java.util.Vector"%>
-<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.List"%>
 <%@page import="booking.BookingDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -9,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gaegu&family=Hi+Melody&family=Nanum+Myeongjo&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <title>Insert title here</title>
@@ -21,7 +19,7 @@
 </head>
 <%
   BookingDao dao=new BookingDao();
-  List <BookingDto> list=dao.getAllBookings();
+  List<BookingDto> list=dao.getAllBookings();
 %>
 <body>
 <div  style="margin: 100px 100px; width: 700px;">
@@ -52,8 +50,18 @@
     	   <tr>
     	     <td align="center"><b><%=i+1 %></b></td>
     	     <td>
+    	     <%-- <%
+				if(dto.getGender().equalsIgnoreCase("m")){%>
+					<img src="../image/bookimage/male.png" width="40">
+				<%}else{%>
+					<img src="../image/bookimage/female.png" width="40">
+				<%}
+				%> --%>
+				
+				<!-- (2) 삼항연산자로 한경우 -->
+				<img src="../image/bookimage/<%=dto.getGender().equalsIgnoreCase("m")?"male":"female"%>.png" width="40">
+				&nbsp;
     	     
-    	     <img alt="" src="../image/bookimage/">
     	       <b><%=dto.getName() %></b>
     	     </td>
     	     <td align="center"><%=dto.getInwon() %></td>
@@ -66,6 +74,7 @@
        <%}
        %>
     </table>
+    
 </div>
 </body>
 </html>

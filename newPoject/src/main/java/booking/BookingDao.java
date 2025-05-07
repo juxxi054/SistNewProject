@@ -43,7 +43,7 @@ public class BookingDao {
   	  
     }
     
-    //전체출력
+  //전체출력
     public List<BookingDto> getAllBookings()
     {
   	  List<BookingDto> list=new ArrayList<BookingDto>();
@@ -84,43 +84,97 @@ public class BookingDao {
   	  
   	  return list;
     }
-  //num에 해당하는 dto반환
-  		public BookingDto getData(String num)
-  	  	{
-  	  		BookingDto dto=new BookingDto();
-  	  		
-  	  		Connection conn=db.getConnection();
-  	  		PreparedStatement pstmt=null;
-  	  		ResultSet rs=null;
-  	  		
-  	  		String sql="select * from booking where num=?";
-  	  		
-  	  		try {
-  				pstmt=conn.prepareStatement(sql);
-  				pstmt.setString(1, num);
-  	  			rs=pstmt.executeQuery();
-  	  			
-  	  			if(rs.next())
-  	  			{
-  	  			dto.setNum(rs.getString("num"));
-  	  			dto.setName(rs.getString("name"));
-  	  			dto.setBookday(rs.getString("bookday"));
-  	  			dto.setFoodphoto(rs.getString("foodphoto"));
-  	  			dto.setFoodprice(rs.getString("foodprice"));
-  	  			dto.setGender(rs.getString("gender"));
-  	  			dto.setInwon(rs.getInt("inwon"));
-  	  			dto.setMessage(rs.getString("message"));
-  	  			dto.setWriteday(rs.getTimestamp("writeday"));
-  	  			}
-  	  			
-  			} catch (SQLException e) {
-  				// TODO Auto-generated catch block
-  				e.printStackTrace();
-  			}finally {
-  	  			db.dbClose(rs, pstmt, conn);
-  	  		}
-  	  		
-  	  		
-  	  		return dto;
-  	  	}
+    
+  //num  에 해당하는 부킹정보 반환
+  	public BookingDto getBooking(String num)
+  	{
+  		BookingDto dto=new BookingDto();
+  		
+  		String sql="select * from booking where num=?";
+  		Connection conn=null;
+  		PreparedStatement pstmt=null;
+  		ResultSet rs=null;
+  		
+  		conn=db.getConnection();
+  		try {
+  			pstmt=conn.prepareStatement(sql);
+  			//바인딩
+  			pstmt.setString(1, num);
+  			
+  			rs=pstmt.executeQuery();
+  			if(rs.next()) {
+  				dto.setNum(rs.getString("num"));
+  				dto.setName(rs.getString("name"));
+  				dto.setBookday(rs.getString("bookday"));
+  				dto.setFoodphoto(rs.getString("foodphoto"));
+  				dto.setFoodprice(rs.getString("foodprice"));
+  				dto.setGender(rs.getString("gender"));
+  				dto.setInwon(rs.getInt("inwon"));
+  				dto.setWriteday(rs.getTimestamp("writeday"));
+  				dto.setMessage(rs.getString("message"));				
+  			}
+  		} catch (SQLException e) {
+  			// TODO Auto-generated catch block
+  			e.printStackTrace();
+  		}finally {
+  			db.dbClose(rs, pstmt, conn);
+  		}
+  		return dto;
+  	}
+  	
+  	//삭제
+  	public void deleteBooking(String num)
+  	{
+  		Connection conn=db.getConnection();
+  		PreparedStatement pstmt=null;
+  		
+  		String sql="delete from booking where num=?";
+  		
+  		try {
+  			pstmt=conn.prepareStatement(sql);
+  			//바인딩
+  			pstmt.setString(1, num);
+  			//실행
+  			pstmt.execute();
+  		} catch (SQLException e) {
+  			// TODO Auto-generated catch block
+  			e.printStackTrace();
+  		}finally {
+  			db.dbClose(pstmt, conn);
+  		}
+  		
+  	}
+  	
+  	//수정
+    public void updatebooking(BookingDto dto)
+    {
+  	  Connection conn=db.getConnection();
+  	  PreparedStatement pstmt=null;
+  	  
+  	  String sql="update booking set name=?,gender=?,bookday=?,inwon=?,foodphoto=?,foodprice=?,message=?,"
+  	  		+ "writeday=sysdate where num=?";
+  	  
+  	  try {
+  		pstmt=conn.prepareStatement(sql);
+  		
+  		pstmt.setString(1, dto.getName());
+  		pstmt.setString(2, dto.getGender());
+  		pstmt.setString(3, dto.getBookday());
+  		pstmt.setInt(4, dto.getInwon());
+  		pstmt.setString(5, dto.getFoodphoto());
+  		pstmt.setString(6, dto.getFoodprice());
+  		pstmt.setString(7, dto.getMessage());
+  		pstmt.setString(8, dto.getNum());
+  		
+  		pstmt.execute();
+  		
+  	} catch (SQLException e) {
+  		// TODO Auto-generated catch block
+  		e.printStackTrace();
+  	}finally {
+  		db.dbClose(pstmt, conn);
+  	}
+  	  
+    }
+    
   }
