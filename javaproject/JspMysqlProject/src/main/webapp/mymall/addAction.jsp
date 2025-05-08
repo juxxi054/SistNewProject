@@ -13,32 +13,29 @@
 </head>
 <body>
 <%
-request.setCharacterEncoding("utf-8");
+  request.setCharacterEncoding("utf-8");
 
-String sangpum=request.getParameter("sangpum");
-String photo=request.getParameter("photo");
-String color=request.getParameter("color");
-int price=Integer.parseInt(request.getParameter("price"));
-String ipgoday=request.getParameter("ipgoday");
-String writeday=request.getParameter("writeday");
-
-//dto
-MymallDto dto=new MymallDto();
-dto.setSanmgpum(sangpum);
-dto.setPhoto(photo);
-dto.setColor(color);
-dto.setPrice(price);
-dto.setIpgoday(ipgoday);
-
-MymallDao dao=new MymallDao();
-dao.insertMall(dto);
-
-//목록
-response.sendRedirect("mallList.jsp");
-
-
-
+  String sangpum=request.getParameter("sangpum");
+  String photo=request.getParameter("photo");
+  String color=request.getParameter("color");
+  int price=Integer.parseInt(request.getParameter("price"));
+  String ipgoday=request.getParameter("ipgoday");
+  
+  //dto
+  MymallDto dto=new MymallDto();
+  dto.setSangpum(sangpum);
+  dto.setPhoto(photo);
+  dto.setColor(color);
+  dto.setPrice(price);
+  dto.setIpgoday(ipgoday);
+  
+  //dao
+  MymallDao dao=new MymallDao();
+  //insert호출
+  dao.insertMall(dto);
+  
+  //목록
+  response.sendRedirect("mallList.jsp");
 %>
-
 </body>
 </html>

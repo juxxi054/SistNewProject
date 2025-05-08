@@ -4,7 +4,6 @@ import java.sql.Timestamp;
 
 public class MymallDto {
 
-	
 	private String num;
 	private String sangpum;
 	private String photo;
@@ -13,13 +12,6 @@ public class MymallDto {
 	private String ipgoday;
 	private Timestamp writeday;
 	
-	
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
-	}
 	public String getNum() {
 		return num;
 	}
@@ -29,8 +21,8 @@ public class MymallDto {
 	public String getSangpum() {
 		return sangpum;
 	}
-	public void setSanmgpum(String sanmgpum) {
-		this.sangpum = sanmgpum;
+	public void setSangpum(String sangpum) {
+		this.sangpum = sangpum;
 	}
 	public String getPhoto() {
 		return photo;
@@ -56,6 +48,12 @@ public class MymallDto {
 	}
 	public void setWriteday(Timestamp writeday) {
 		this.writeday = writeday;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
 	}
 	
 	

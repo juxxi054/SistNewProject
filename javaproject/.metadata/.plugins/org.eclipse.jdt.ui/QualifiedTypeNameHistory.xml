@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="day0320.AboutSawon"/>
     <fullyQualifiedTypeName name="day0320.MyCludCrud"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="day0321.ShopTest"/>
@@ -39,12 +38,9 @@
     <fullyQualifiedTypeName name="day0326.shopList"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="day0326.shopDbModel"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="day0326.shopupdate"/>
     <fullyQualifiedTypeName name="day0326.shopDto"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
-    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="Car.car01"/>
     <fullyQualifiedTypeName name="java.awt.GridBagLayout"/>
     <fullyQualifiedTypeName name="kiosk.KioskMain"/>
@@ -55,9 +51,13 @@
     <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
     <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
     <fullyQualifiedTypeName name="DBConnect"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
     <fullyQualifiedTypeName name="java.sql.Timestamp"/>
-    <fullyQualifiedTypeName name="mysql.db.DBConnect"/>
     <fullyQualifiedTypeName name="mymall.MymallDto"/>
+    <fullyQualifiedTypeName name="org.eclipse.jdt.internal.compiler.ast.ReturnStatement"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="mysql.db.DBConnect"/>
 </qualifiedTypeNameHistroy>
