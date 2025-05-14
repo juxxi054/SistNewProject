@@ -34,7 +34,7 @@ function readURL(input) {
 </head>
 <body>
 <div style="margin: 100px 100px; width: 600px;">
-   <form action="addaction.jsp" method="post" enctype="multipart/form-data">
+   <form action="addAction.jsp" method="post" enctype="multipart/form-data">
       <table class="table table-bordered">
          <tr>
             <th class="table-warning">작성자</th>

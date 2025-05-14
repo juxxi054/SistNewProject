@@ -32,7 +32,7 @@
 		<item key="create_package_info_java" value="false"/>
 	</section>
 	<section name="NewClassCreationWizard.dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="432"/>
+		<item key="DIALOG_X_ORIGIN" value="589"/>
 		<item key="DIALOG_Y_ORIGIN" value="217"/>
 		<item key="DIALOG_WIDTH" value="575"/>
 		<item key="DIALOG_HEIGHT" value="659"/>
@@ -118,8 +118,9 @@
 		<item key="updateSimilarElements" value="false"/>
 		<item key="updateSimilarElementsMatchStrategy" value="1"/>
 		<item key="updateTextualMatches" value="false"/>
-		<item key="updateQualifiedNames" value="false"/>
+		<item key="updateQualifiedNames" value="true"/>
 		<item key="patterns" value="*"/>
+		<item key="renameSubpackages" value="false"/>
 	</section>
 	<section name="NewInterfaceCreationWizard.dialogBounds">
 		<item key="DIALOG_X_ORIGIN" value="678"/>

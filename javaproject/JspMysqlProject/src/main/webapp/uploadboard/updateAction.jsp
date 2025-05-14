@@ -1,4 +1,3 @@
-<%@page import="java.io.File"%>
 <%@page import="uploadboard.uploadDao"%>
 <%@page import="uploadboard.uploadeDto"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
@@ -15,17 +14,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<!-- 비밀번호 일치하면 수정후 상세보기
+불일치하면 경고창 -->
 <%
 	//한글 엔코딩
 	request.setCharacterEncoding("utf-8");
 	
 	//업로드에 필요한 변수 선언
 	//1.업로드할 경로(톰켓에 올라가는 프로젝트 경로)
-	
 	String realFolder=getServletContext().getRealPath("/save");
 	System.out.println(realFolder);
-		
+	
 	//2.업로드 사이즈
 	int uploadSize=1024*1024;//1mb
 	
@@ -38,17 +37,20 @@
 						uploadSize,"utf-8",
 						new DefaultFileRenamePolicy());
 		//입력값 읽기
-		String writer=multi.getParameter("writer");
+		String num=multi.getParameter("num");
 		String subject=multi.getParameter("subject");
 		String content=multi.getParameter("content");
 		String pass=multi.getParameter("pass");
+		
+		//페이지번호읽기
+		String currentPage=multi.getParameter("currentPage");
 		
 		//실제 업로드 이미지이름 읽어오기
 		String imgname=multi.getFilesystemName("photo");
 		
 		//dto 에 담기
 		uploadeDto dto=new uploadeDto();
-		dto.setWriter(writer);
+		dto.setNum(num);
 		dto.setSubject(subject);
 		dto.setContent(content);
 		dto.setPass(pass);
@@ -57,16 +59,29 @@
 		//db 선언
 		uploadDao db=new uploadDao();
 		
-		//insert 메서드 호출
-		db.insertBoard(dto);
+		//비번이 맞으면 수정후 내용보기로 이동,틀리면 경고
+		boolean b=db.isEqualPass(num, pass);
 		
-		//목록으로 이동
-		response.sendRedirect("boardList.jsp");
+		if(b)
+		{
+			//update 메서드 호출
+			db.updateUpload(dto);
+			
+			//디테일페이지로 이동
+			response.sendRedirect("detailView.jsp?num="+num+"&currentPage="+currentPage);
+		}else{
+			%>
+			<script type="text/javascript">
+			  alert("비밀번호가 틀렸어요!!!");
+			  history.back();
+			</script>
+		<%}
+		
+		
 	}catch(Exception e)
 	{
 		System.out.println("업로드 오류:"+e.getMessage());
 	}
 %>
-
 </body>
 </html>

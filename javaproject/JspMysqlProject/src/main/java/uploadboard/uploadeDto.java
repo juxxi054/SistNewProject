@@ -1,5 +1,7 @@
 package uploadboard;
 
+import java.sql.Timestamp;
+
 public class uploadeDto {
 
 	
@@ -7,10 +9,11 @@ public class uploadeDto {
 	private String writer;
 	private String subject;
 	private String content;
-	private String imagename;
+	private String imgname;
 	private String pass;
-	private String readcount;
-	private String writeday;
+	private int readcount;
+	private Timestamp writeday;
+	
 	public String getNum() {
 		return num;
 	}
@@ -35,11 +38,11 @@ public class uploadeDto {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getImagename() {
-		return imagename;
+	public String getImgname() {
+		return imgname;
 	}
-	public void setImagename(String imagename) {
-		this.imagename = imagename;
+	public void setImgname(String imgname) {
+		this.imgname = imgname;
 	}
 	public String getPass() {
 		return pass;
@@ -47,16 +50,16 @@ public class uploadeDto {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
-	public String getReadcount() {
+	public int getReadcount() {
 		return readcount;
 	}
-	public void setReadcount(String readcount) {
+	public void setReadcount(int readcount) {
 		this.readcount = readcount;
 	}
-	public String getWriteday() {
+	public Timestamp getWriteday() {
 		return writeday;
 	}
-	public void setWriteday(String writeday) {
+	public void setWriteday(Timestamp writeday) {
 		this.writeday = writeday;
 	}
 	
