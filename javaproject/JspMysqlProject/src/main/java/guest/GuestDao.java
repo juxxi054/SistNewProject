@@ -2,7 +2,10 @@ package guest;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import mysql.db.DBConnect;
 
@@ -31,4 +34,70 @@ DBConnect db=new DBConnect();
 		}
 		
 	}
-}
+	//전체글갯수
+		public int getTotalCount()
+		{
+			int n=0;
+			Connection conn=db.getConnection();
+			PreparedStatement pstmt=null;
+			ResultSet rs=null;
+			String sql="select count(*) from guest";
+			
+			try {
+				pstmt=conn.prepareStatement(sql);
+				rs=pstmt.executeQuery();
+				if(rs.next())
+				{
+					n=rs.getInt(1);
+				}
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				db.dbClose(rs, pstmt, conn);
+			}
+
+			return n;
+		}
+		
+			//페이징처리한 리스트 목록 반환
+			public List<GuestDto> getList(int start,int perpage)
+			{
+				List<GuestDto> list=new ArrayList<GuestDto>();
+				String sql="select * from guest order by num desc limit ?,?";
+				Connection conn=db.getConnection();
+				PreparedStatement pstmt=null;
+				ResultSet rs=null;
+				
+				
+				try {
+					pstmt=conn.prepareStatement(sql);
+					//바인딩
+					pstmt.setInt(1, start);
+					pstmt.setInt(2, perpage);
+					//실행
+					rs=pstmt.executeQuery();
+					while(rs.next())
+					{
+						GuestDto dto=new GuestDto();
+						dto.setNum(rs.getString("num"));
+						dto.setMyid(rs.getString("myid"));
+						dto.setContent(rs.getString("content"));
+						dto.setPhoto(rs.getString("photo"));
+						dto.setWriteday(rs.getTimestamp("writeday"));
+						//list 에 추가
+						list.add(dto);
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}finally {
+					db.dbClose(rs, pstmt, conn);
+				}
+				return list;
+			}
+
+		
+
+	}
