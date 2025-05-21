@@ -94,4 +94,58 @@ public void deleteGuestAnswer(String idx)
 	}
 	
 }
+
+//idx에 대한 dto
+	public String getGuestAnswerData(String idx)
+	{
+		String content="";
+		
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		
+		String sql="select content from guestanswer where idx=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, idx);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next())
+				content=rs.getString("content");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+		
+		
+		return content;
+	}
+	
+	//수정
+	
+	public void updateGuestAnswer(String idx,String content)
+	{
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		
+		String sql="update guestanswer set content=? where idx=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, content);
+			pstmt.setString(2, idx);
+			pstmt.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(pstmt, conn);
+		}
+		
+	}
+	 
+	
 }

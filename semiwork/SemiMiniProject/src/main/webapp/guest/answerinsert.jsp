@@ -1,5 +1,5 @@
-<%@page import="data.Dao.GuestAnswerDao"%>
 <%@page import="data.Dto.GuestAnswerDto"%>
+<%@page import="data.Dao.GuestAnswerDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,13 +19,14 @@
   dto.setNum(request.getParameter("num"));
   dto.setMyid(request.getParameter("myid"));
   dto.setContent(request.getParameter("content"));
+  String currentPage=request.getParameter("currentPage");
   
   //db
   GuestAnswerDao dao=new GuestAnswerDao();
   dao.insertGuestAnswer(dto);
   
   //목록
-  response.sendRedirect("../index.jsp?main=guest/guestlist.jsp");
+  response.sendRedirect("../index.jsp?main=guest/guestlist.jsp?currentPage="+currentPage);
 %>
 </body>
 </html>

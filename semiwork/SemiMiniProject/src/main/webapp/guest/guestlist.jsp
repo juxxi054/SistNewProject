@@ -1,8 +1,8 @@
 <%@page import="data.Dto.GuestAnswerDto"%>
 <%@page import="data.Dao.GuestAnswerDao"%>
-<%@page import="data.Dao.MemberDao"%>
-<%@page import="data.Dto.GuestDto"%>
 <%@page import="data.Dao.GuestDao"%>
+<%@page import="data.Dto.GuestDto"%>
+<%@page import="data.Dao.MemberDao"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -14,6 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gaegu&family=Hi+Melody&family=Nanum+Myeongjo&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <title>Insert title here</title>
 <script type="text/javascript">
@@ -25,8 +26,8 @@
 		//댓글클릭시 댓글부분이 보였다/안보였다 하기
 		$("span.answer").click(function(){
 			 
-			//$(this).parent().find("div.answer").slideToggle();
-			$("div.answer").slideToggle();
+			$(this).parent().find("div.answer").slideToggle();
+			//$("div.answer").slideToggle();
 		});
 		
 		//댓글삭제
@@ -52,6 +53,47 @@
 					}
 				});
 			}
+		});
+		
+		//댓글 수정창 클릭시 모달에 idx,content
+		$("i.aedit").click(function(){
+			var idx=$(this).attr("idx");
+			//alert(idx);
+			
+			//댓글ㅇ수정창의 idx에 넣어주기
+			$("#idx").val(idx);
+			
+			$.ajax({
+				type:"get",
+				dataType:"json",
+				url:"guest/answercontent.jsp",
+				data:{"idx":idx},
+				success:function(res){
+					$("#idx").val(res.idx);
+					$("#ucontent").val(res.story);
+				}
+			})
+		})
+		
+		
+		//댓글수정
+		$("#btnupdate").click(function(){
+			
+			var idx=$("#idx").val();
+			var content=$("#ucontent").val();
+			
+			//alert(idx+","+content);
+			
+			$.ajax({
+				type:"post",
+				url:"guest/answerupdate.jsp",
+				dataType:"html",
+				data:{"idx":idx,"content":content},
+				success:function(){
+					location.reload();
+				}
+			})
+			
 		});
 		
 	})
@@ -149,6 +191,8 @@
 	      </td>
 	    </tr>
 	    
+	    
+	    
 	    <!-- 댓글 -->
 	    <tr>
 	      <td>
@@ -169,7 +213,7 @@
 	    		      <form action="guest/answerinsert.jsp" method="post">
 	    		        <input type="hidden" name="num" value="<%=dto.getNum()%>">
 	    		        <input type="hidden" name="myid" value="<%=sessionid%>">
-	    		        
+	    		        <input type="hidden" name="currentPage" value="<%=currentPage%>">
 	    		        <table>
 	    		          <tr>
 	    		            <td>
@@ -223,6 +267,11 @@
 	    	    	        	<i class="bi bi-x adel" style="color: red; margin-left: 20px; 
 	    	    	        	font-weight: bold; " idx="<%=adto.getIdx()%>"></i>
 	    	    	        	
+	    	    	        	<i class="bi bi-pencil-fill aedit" idx="<%=adto.getIdx()%>"
+	    	    	        	style="color: green; margin-left: 20px; 
+	    	    	        	font-weight: bold; "
+	    	    	        	data-bs-toggle="modal" data-bs-target="#gAnsEditModal"
+	    	    	        	></i>
 	    	    	        <%}
 	    	    	      %>
 	    	    	      
@@ -235,6 +284,7 @@
 	    </div>
 	      </td>
 	    </tr>
+	   
 	   
 	    
 	    
@@ -307,6 +357,29 @@
      </div>
      
 
+     <!-- Modal -->
+<div class="modal fade" id="gAnsEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">댓글수정</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="updateform input-group" >
+        	<input type="hidden" id="idx">
+           <input type="text" id="ucontent" class="form-control"
+           style="width: 350px;">&nbsp;&nbsp;&nbsp;
+           <button type="button" class="btn btn-primary" id="btnupdate">수정</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 </body>

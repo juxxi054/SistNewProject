@@ -11,9 +11,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div>
-   <button type="button" class="btn btn-outline-info"
-   onclick="location.href='index.jsp?main=board/writeform.jsp'">새글쓰기</button>
-</div>
+
 </body>
 </html>
