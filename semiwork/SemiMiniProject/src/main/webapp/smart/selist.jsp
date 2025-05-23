@@ -1,5 +1,6 @@
-<%@page import="data.Dao.BoardDao"%>
-<%@page import="data.Dto.BoardDto"%>
+<%@page import="data.Dao.SmartDao"%>
+<%@page import="data.Dao.SmartAnswerDao"%>
+<%@page import="data.Dto.SmartDto"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -16,17 +17,27 @@
 </head>
 <%
   //dao
-  BoardDao dao=new BoardDao();
-  List<BoardDto> list=dao.getAllDatas();
+  SmartDao dao=new SmartDao();
+  List<SmartDto> list=dao.getAllDatas();
   SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm");
+  
+  
+  SmartAnswerDao adao=new SmartAnswerDao(); //댓글에 관한 dao
+  
+  for(SmartDto dto:list)
+  {
+	  //댓글변수에 댓글총갯수 넣기
+	  int acount=adao.getAnswerList(dto.getNum()).size();
+	  dto.setAnswercount(acount);
+  }
 %>
 <body>
-<div class="write">
-   <button type="button" class="btn btn-outline-info"
-   onclick="location.href='index.jsp?main=board/writeform.jsp'">새글쓰기</button>
-</div>
-
-<div class="board">
+  <div>
+    <button type="button" class="btn btn-success"
+    onclick="location.href='index.jsp?main=smart/smartform.jsp'">스마트폼</button>
+  </div>
+  
+  <div class="board">
   <table class="table table-bordered" style="width: 800px;">
      <caption align="top"><b>총<%=list.size() %>개의 게시글이 있습니다</b></caption>
      <tr class="table-success">
@@ -48,38 +59,25 @@
        
     	   for(int i=0;i<list.size();i++)
     	   {
-    	     BoardDto dto=list.get(i);
+    	     SmartDto dto=list.get(i);
     	   %>
     		   <tr>
     		     <td align="center"><%=list.size()-i %></td>
     		     <td>
-    		        <!-- 답글인경우 공백_1레벨당 2칸 or 3칸 -->
-    		        <%
-    		          for(int a=1;a<=dto.getRelevel();a++)
-    		          {%>
-    		        	  &nbsp;&nbsp;&nbsp;
-    		         <% }
-    		        %>
-    		        <!-- 답글이면 답글이미지출력 -->
-    		        <%
-    		          if(dto.getRelevel()>0)
-    		          {%>
-    		        	  <img alt="" src="image2/re.png">
-    		          <%
-    		          //원글이 없는경우
-    		          boolean flag=dao.isGroupStep(dto.getRegroup());
-    		          
-    		           
-    		        	   if(!flag) //원글이 없는경우
-    		        	   {%>
-    		        		   <span style="color: red;">[원글이 없는 답글]</span>
-    		        	   <%}
-    		           
-    		          }
-    		        %>
-    		        
-    		        <a href="index.jsp?main=board/content.jsp&num=<%=dto.getNum()%>">
+    		            		        
+    		        <a href="index.jsp?main=smart/content.jsp?num=<%=dto.getNum()%>"
+    		        style="text-decoration: none; color: black;">
     		           <%=dto.getSubject() %></a>
+    		           
+    		           <!-- 댓글갯수 -->
+    		           <%
+    		             if(dto.getAnswercount()>0)
+    		             {%>
+    		            	 <a style="color: red;"
+    		            	 href="index.jsp?main=smart/content.jsp?num=<%=dto.getNum()%>#alist">[<%=dto.getAnswercount() %>]</a>
+    		             <%}
+    		           %>
+    		           
     		     </td>
     		     <td><%=dto.getWriter() %></td>
     		     <td><%=sdf.format(dto.getWriteday()) %></td>
@@ -92,6 +90,5 @@
      %>
   </table>
 </div>
-
 </body>
 </html>

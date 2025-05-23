@@ -20,13 +20,13 @@
     BoardDao dao=new BoardDao();
     
     //답글인경우  제목에 원글제목 붙여주기
-   /*  if(num!=null)
+     if(num!=null)
     {
     	regroup=request.getParameter("regroup");
     	relevel=request.getParameter("relevel");
     	restep=request.getParameter("restep");
     	    	
-    } */
+    } 
     
     
   
