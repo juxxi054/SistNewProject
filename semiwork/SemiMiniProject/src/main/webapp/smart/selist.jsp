@@ -13,6 +13,57 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script type="text/javascript">
+  $(function(){
+	  
+	  //전체클릭시 체크값모두얻어서 그체크값 전달하기
+	  $(".alldelcheck").click(function(){
+		  
+		  //전체체크얻기
+		  var chk=$(this).is(":checked");
+		  console.log(chk);
+		  
+		  //전체체크를 번호의 체크에 일괄전달(prop)
+		  $(".alldel").prop("checked",chk);
+		  
+		  
+		  
+	  });
+	  
+	//삭제버튼클릭시 삭제
+	  $("#btndel").click(function(){
+		  
+		  //체크된길이
+		  var len=$(".alldel:checked").length;
+		 // alert(len);
+		 
+		 if(len==0){
+			 alert("최소1개이상의 글을 선택해주세요");
+		 }else{
+			 
+			 var a=confirm(len+"개의 글을 삭제하려면 [확인]을 눌러주세요");
+			 
+			 //체크된 value의 num값 얻기
+			 var n="";
+			 
+			 $(".alldel:checked").each(function(idx){
+				 
+				 n+=$(this).val()+",";
+			 });
+			 
+			 //마지막컴마제거
+			 n=n.substring(0,n.length-1);
+			 console.log(n);
+			 
+			 //삭제파일로 전송
+			 location.href="smart/alldelete.jsp?nums="+n;
+		 }
+		 
+		  
+	  });
+	  
+  });
+</script>
 <title>Insert title here</title>
 </head>
 <%
@@ -62,7 +113,10 @@
     	     SmartDto dto=list.get(i);
     	   %>
     		   <tr>
-    		     <td align="center"><%=list.size()-i %></td>
+    		     <td align="center">
+    		     <input type="checkbox" value="<%=dto.getNum()%>" class="alldel">
+    		     <%=list.size()-i %>
+    		     </td>
     		     <td>
     		            		        
     		        <a href="index.jsp?main=smart/content.jsp?num=<%=dto.getNum()%>"
@@ -84,9 +138,22 @@
     		     <td><%=dto.getReadcount() %></td>
     		   </tr>
     		   
-    	   <%}
+    	   <%}%>
+    	   
+    	   <tr>
+    	     <td colspan="5" >
+    	       <input type="checkbox" class="alldelcheck"
+    	       style="margin-left: 20px;">전체선택&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	       <span>
+    	         <button type="button" class="btn btn-danger" id="btndel">삭제</button>
+    	         &nbsp;&nbsp;&nbsp;
+    	         <button type="button" class="btn btn-success" 
+    	         onclick="location.href='index.jsp?main=smart/smartform.jsp'">글쓰기</button>
+    	       </span>
+    	     </td>
+    	   </tr>
             
-       }
+       <%}
      %>
   </table>
 </div>
