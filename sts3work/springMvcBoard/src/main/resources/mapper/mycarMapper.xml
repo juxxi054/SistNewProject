@@ -7,4 +7,10 @@
   <insert id="insertofMycsr" parameterType="cdto">
   insert into mycar(carname,carprice,carcolor,carguip,carwriteday)values(#{carname},#{carprice},#{carcolor},#{carguip},#{carwriteday},)
   </insert>
+  <select id="selectOneOfCar" resultType="cdto" parameterType="String">
+  select * from mycar where num *=#{num
+  </select>
+  <update id="updateOfCar" parameterType="String">
+  update mycar set carname=#{carname},carprice=#{carprice},carcolor=#{carcolor},carwriteday=#{carwriteday}
+  </update>
 </mapper>

@@ -14,6 +14,7 @@
 <body>
 <a href="list">스프링 게시판 연습</a> 
 <a href="car/list">자동차 리스트 </a> 
+<a href=""
 <!--<c:redirect url="list"/>-->
 </body>
 </html>
