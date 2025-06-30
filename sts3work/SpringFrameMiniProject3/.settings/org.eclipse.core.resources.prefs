@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/main/java/spring/mvc/controller/AnswerController.java=UTF-8
+encoding//src/main/java/spring/mvc/controller/AnswerRestController.java=UTF-8
+encoding//src/main/java/spring/mvc/dao/BoardDao.java=UTF-8
+encoding//src/main/java/spring/mvc/dto/BoardDto.java=UTF-8

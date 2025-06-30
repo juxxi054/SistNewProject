@@ -2,19 +2,31 @@ package spring.mvc.dto;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class BoardDto {
 
 	private int num;
 	private String writer;
-	private String suject;
+	private String subject;
 	private String content;
 	private String photo;
 	private int regroup;
 	private int restep;
 	private int relevel;
 	private int readcount;
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Timestamp writeday;
+	private int acount; //´ñ±Û°¹¼ö
 	
+	
+	
+	public int getAcount() {
+		return acount;
+	}
+	public void setAcount(int acount) {
+		this.acount = acount;
+	}
 	public int getNum() {
 		return num;
 	}
@@ -27,11 +39,11 @@ public class BoardDto {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	public String getSuject() {
-		return suject;
+	public String getSubject() {
+		return subject;
 	}
-	public void setSuject(String suject) {
-		this.suject = suject;
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
 	public String getContent() {
 		return content;

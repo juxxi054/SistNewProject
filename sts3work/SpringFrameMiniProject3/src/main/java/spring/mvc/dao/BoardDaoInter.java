@@ -11,4 +11,9 @@ public interface BoardDaoInter {
 	public void updateRestep(int regroup,int restep);
 	public void insertBoard(BoardDto dto);
 	public List<BoardDto> getList(int start,int perpage);
+	public void updateReadcount(int num);
+	public BoardDto getData(int num);
+	public void updateBoard(BoardDto dto);
+	public void deleteBoard(int num);
+	List<BoardDto> getAllList();
 }

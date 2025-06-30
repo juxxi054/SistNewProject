@@ -8,6 +8,7 @@
 <meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gaegu&family=Hi+Melody&family=Nanum+Myeongjo&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <title>Insert title here</title>
 </head>
@@ -39,7 +40,41 @@
        <tr>
          <td>${no }</td>
          <c:set var="no" value="${no-1 }"/> <!-- 출력후 감소 -->
-         <td>${dto.subject }</td>
+         
+         <td>
+         <!-- relevel만큼 공백 -->
+         <c:forEach  begin="1" end="${dto.relevel }">
+            &nbsp;&nbsp;
+         </c:forEach>
+         
+         <!-- 답글인경우에만 re.png이미지출력 -->
+         <c:if test="${dto.relevel>0 }">
+            <img alt="" src="../image/mini/re.png">
+         </c:if>
+         
+         <a href="content?num=${dto.num }&currentPage=${currentPage}">${dto.subject }</a>
+         
+         
+         
+         <!-- 사진이 있을경우 아이콘표시 -->
+         <c:if test="${dto.photo!='no' }">
+         	<i class="bi bi-image" style="color: gray;"></i>
+         </c:if>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <!--댓글갯수출력  -->
+         <c:if test="${dto.acount>0 }">
+           <a href="content?num=${dto.num }&currentPage=${currentPage}#answer"
+           style="color: red;">[${dto.acount }]</a>
+         </c:if>
+         
+         </td>
+         
+         
+         
+         
+         
+         
+         
          <td>${dto.writer }</td>
          <td>
             <fmt:formatDate value="${dto.writeday }" pattern="yyyy-MM-dd HH:mm"/>
@@ -55,7 +90,7 @@
      <ul class="pagination justify-content-center">
      
      <!-- 이전 -->
-        <c:if test="startPage>1">
+        <c:if test="${startPage>1 }">
            <li class="page-item">
         	    <a class="page-link" href="list?currentPage=${startPage-1 }"
         	    style="color: black;">
@@ -66,19 +101,19 @@
         
         <!-- 페이지번호-->
         <c:forEach  var="pp" begin="${startPage }" end="${endPage }">
-          <c:if test="pp==currentPage">
+          <c:if test="${pp==currentPage }">
               <li class="page-item active">
        				  <a class="page-link" href="list?currentPage=${pp }">${pp }</a>
        	      </li>
           </c:if>
-          <c:if test="pp!=currentPage">
+          <c:if test="${pp!=currentPage }">
               <li class="page-item">
        				  <a class="page-link" href="list?currentPage=${pp }">${pp }</a>
        	      </li>
           </c:if>
         </c:forEach>
        <!-- 다음 -->
-       <c:if test="endPage<totalPage">
+       <c:if test="${endPage<totalPage }">
           <li class="page-item">
         	    <a class="page-link" href="list?currentPage=${endPage+1 }"
         	    style="color: black;">

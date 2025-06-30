@@ -18,5 +18,6 @@
  <a href="${root }/member/list">Member</a>&nbsp;&nbsp;
  <a href="${root }/board/list">Board</a>&nbsp;&nbsp;
   <a href="${root }/shop/list">Myshop</a>&nbsp;&nbsp;
+<a href="${root }/board/list1">AjaxBoard</a>&nbsp;&nbsp;
 </body>
 </html>

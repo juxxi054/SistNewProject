@@ -39,25 +39,26 @@ public class BoardDao implements BoardDaoInter {
 	@Override
 	public void insertBoard(BoardDto dto) {
 		
-		int num=dto.getNum();  //0:»õ±Û   1ÀÌ»ó°ª:´ä±Û
+		int num=dto.getNum();  //0:ìƒˆê¸€   1ì´ìƒê°’:ë‹µê¸€
 		int regroup=dto.getRegroup();
 		int restep=dto.getRestep();
 		int relevel=dto.getRelevel();
 		
-		if(num==0) //»õ±Û
+		if(num==0) //ìƒˆê¸€
 		{
 			regroup=getMaxNum()+1;
 			restep=0;
 			relevel=0;
 		}else {
-			//°°Àº±×·ìÁß Àü´Ş¹ŞÀº restepº¸´Ù Å«±ÛµéÀº ¸ğµÎ +1
+			//ê°™ì€ê·¸ë£¹ì¤‘ ì „ë‹¬ë°›ì€ restepë³´ë‹¤ í°ê¸€ë“¤ì€ ëª¨ë‘ +1
 			this.updateRestep(regroup, restep);
 			
-			//Àü´Ş¹ŞÀº step,level +1
+			//ì „ë‹¬ë°›ì€ step,level +1
 			restep++;
 			relevel++;
 		}
 		
+		//ë°”Â…å¯¬ã•æ¹§ ë‹¤ì‹œ dtoì— ë‹´ëŠ”ë‹¤
 		dto.setRegroup(regroup);
 		dto.setRestep(restep);
 		dto.setRelevel(relevel);
@@ -75,6 +76,36 @@ public class BoardDao implements BoardDaoInter {
 		map.put("perpage", perpage);
 		
 		return session.selectList("SelectPagingOfBoard", map);
+	}
+
+	@Override
+	public void updateReadcount(int num) {
+		// TODO Auto-generated method stub
+		session.update("UpdateReadCountOfBoard", num);
+	}
+
+	@Override
+	public BoardDto getData(int num) {
+		// TODO Auto-generated method stub
+		return session.selectOne("GetDataOfBoard", num);
+	}
+
+	@Override
+	public void updateBoard(BoardDto dto) {
+		// TODO Auto-generated method stub
+		session.update("UpdateOfBoard", dto);
+	}
+
+	@Override
+	public void deleteBoard(int num) {
+		// TODO Auto-generated method stub
+		session.delete("deleteOfBoard", num);
+	}
+
+	@Override
+	public List<BoardDto> getAllList() {
+		// TODO Auto-generated method stub
+		return session.selectList("SelectAllOfBoard");
 	}
 
 }
