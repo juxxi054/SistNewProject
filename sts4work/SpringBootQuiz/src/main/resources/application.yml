@@ -5,3 +5,4 @@ server.port=9000
 spring.mvc.view.prefix=/WEB-INF/quiz/
 spring.mvc.view.suffix=.jsp
 spring.devtools.livereload.enabled=true
+

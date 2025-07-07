@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.3</version>
+		<version>3.4.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>SpringBootJpaEx3</artifactId>
+	<artifactId>BootMybatisProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>SpringBootJpaEx3</name>
+	<name>BootMybatisProject</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -33,11 +33,12 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>3.0.4</version>
 		</dependency>
 
 		<dependency>
@@ -69,33 +70,15 @@
 			<artifactId>jakarta.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>jakarta.servlet.jsp.jstl</groupId>
 			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.glassfish.web</groupId>
 			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
 		</dependency>
-		
-		<!--jpa에 추가-->
-		
-		<!-- jaxb-api -->
-		<dependency>
-		    <groupId>javax.xml.bind</groupId>
-		    <artifactId>jaxb-api</artifactId>
-		    <version>2.3.1</version>
-		</dependency>
-		<!-- jaxb-runtime -->
-		<dependency>
-		    <groupId>org.glassfish.jaxb</groupId>
-		    <artifactId>jaxb-runtime</artifactId>
-		    <version>2.3.1</version>
-		</dependency>
 
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -104,6 +87,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter-test</artifactId>
+			<version>3.0.4</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
