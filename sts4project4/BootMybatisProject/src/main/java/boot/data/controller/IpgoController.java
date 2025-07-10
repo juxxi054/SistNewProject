@@ -27,11 +27,6 @@ public class IpgoController {
 	@Autowired
 	IpgoMapperInter mapper;
 	
-	@GetMapping("/")
-	public String start()
-	{
-		return "redirect:ipgo/list";
-	}
 	
 	@GetMapping("/ipgo/list")
 	public ModelAndView list()
@@ -92,7 +87,7 @@ public class IpgoController {
 			uploadName=uploadName.substring(0, uploadName.length()-1);
 		}
 		
-		dto.setPhotoimage(uploadName);
+		dto.setPhotoname(uploadName);
 		
 		mapper.insertIpgo(dto);
 		

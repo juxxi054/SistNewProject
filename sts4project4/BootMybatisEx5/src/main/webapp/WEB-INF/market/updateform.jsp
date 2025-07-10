@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +11,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div>
-<jsp:include page="../../layout/header.jsp"></jsp:include>
-</div>
+  <h2>Market정보 수정하기</h2>
+  <form action="update" method="post" enctype="multipart/form-data">
+     <input type="hidden" name="num" value="${dto.num }">
+     <b>상품명: </b>
+      <input type="text" name="sangpum" value="${dto.sangpum }"><br>
+      <b>가격: </b>
+      <input type="text" name="price" value="${dto.price }"><br>
+      <b>이미지: </b>
+      <input type="file" name="photo" ><br>
+      <button type="submit" class="btn btn-danger">DB수정</button>
+  </form>
 </body>
 </html>

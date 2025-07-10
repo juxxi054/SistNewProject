@@ -10,7 +10,35 @@
 </head>
 <body>
    <div th:object="${dto}">
-       [[*{num}]]
+       <h4>번호:<span th:text="*{num}"></span></h4>
+       <h4>상품명:<span th:text="*{sangpum}"></span></h4>
+       <h4>수량: <span th:text="*{su}"></span></h4>
+       <h4>단가: <span th:text="*{dan}"></span></h4>
+       <div th:style="|background-color: *{color};|">
+  		<span th:text="*{color}"></span>
+		</div>
+
+   </div>
+   
+   <hr>
+   <div th:object="${dto}">
+       <h4>번호: [[*{num}]]</h4>
+       <h4>상품명: [[*{sangpum}]]</h4>
+       <h4>수량: [[*{su}]]</h4>
+       <h4>단가: [[*{dan}]]</h4>
+       <div th:style="|background-color: *{color};|">
+  		   색상: [[*{color}]]
+		</div>
+   </div>
+   <hr>
+   <div>
+     <h4>번호:  [[${dto.num}]]</h4>
+     <h4>상품명:  [[${dto.sangpum}]]</h4>
+     <h4>수량:  [[${dto.su}]]</h4>
+     <h4>단가:  [[${dto.dan}]]</h4>
+     <div th:style="|background-color: ${dto.color};|">
+  		   색상: [[${dto.color}]]
+		</div>
    </div>
 </body>
 </html>

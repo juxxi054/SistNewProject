@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("boot.data.*")
+@ComponentScan({"boot.data.*","boot.my.mini"})
 @MapperScan("boot.data.mapper")
 public class BootMybatisProjectApplication {
 

@@ -9,6 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+  <header th:replace="~{fragment/header :: header}"></header>
   <h3 class="alert alert-info">Home입니다</h3>
   <img alt="" src="쇼핑몰사진/1.jpg" width="200">
   
@@ -25,5 +27,8 @@
    <button type="button" onclick="location.href='hello1'">hello1</button><br>
    
     <a th:href="@{/list}">타임리프  list</a><br>
+    
+    <a th:href="@{/login1}">admin로그인</a><br>
+    <a th:href="@{/login2}">angel로그인</a><br>
 </body>
 </html>

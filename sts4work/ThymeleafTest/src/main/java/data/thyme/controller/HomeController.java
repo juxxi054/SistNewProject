@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import boot.day0703.test.ThymeleafTestApplication;
 import data.thyme.dto.ShopDto;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class HomeController {
@@ -92,6 +93,19 @@ public class HomeController {
 		
 		model.addAttribute("dto", list.get(index));
 		return "detail";
+	}
+	
+	@GetMapping("/login1")
+	public String login1(HttpSession session)
+	{
+		session.setAttribute("myid", "admin");
+		return "login";
+	}
+	@GetMapping("/login2")
+	public String login2(HttpSession session)
+	{
+		session.setAttribute("myid", "angel");
+		return "login";
 	}
 	
 	

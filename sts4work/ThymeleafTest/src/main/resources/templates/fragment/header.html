@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gaegu&family=Hi+Melody&family=Nanum+Myeongjo&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
@@ -9,10 +9,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div>
-<header th:fragment="header">
-<a th:fragment></a>
-</header>
-</div>
+    <div>
+       <header th:fragment="header">
+          <a th:href="@{/}">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a th:href="@{/list}">Shop</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a th:href="@{/login1}">admin</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a th:href="@{/login2}">user</a>&nbsp;&nbsp;&nbsp;&nbsp;
+       </header>
+    </div>
 </body>
 </html>

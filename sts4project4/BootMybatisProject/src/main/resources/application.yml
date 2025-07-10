@@ -5,7 +5,7 @@ spring:
  datasource:
    driver-class-name: com.mysql.cj.jdbc.Driver
    url: jdbc:mysql://localhost:3306/rain?serverTimezone=Asia/Seoul
-   username: angel
+   username: root
    password: a1234
 #jsp_setting
  mvc:

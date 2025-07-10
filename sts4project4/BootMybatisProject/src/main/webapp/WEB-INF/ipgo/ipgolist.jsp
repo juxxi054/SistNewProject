@@ -11,8 +11,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <title>Insert title here</title>
+<style type="text/css">
+  body{
+    width: 100%;
+    margin: 0 ;
+  }
+  
+    .container {
+      display: flex;
+      flex-direction: column; /* 세로로 쌓기 */
+      align-items: center;     /* 가로 정렬 중앙 */
+      justify-content: center; /* 세로 정렬 중앙 */
+      height: 100%;
+    }
+</style>
+
 </head>
 <body>
+<div class="container">
+   <jsp:include page="../../layout/header.jsp"></jsp:include>
+   <br><br><br>
+
   <div class="alert alert-success" style="width: 800px;">
      <b>총 ${totalCount }개의 상품이 입고중입니다</b>
    </div>
@@ -61,6 +80,6 @@
        </tr>
      </c:forEach>
   </table>
-
+</div>
 </body>
 </html>

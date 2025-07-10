@@ -12,7 +12,7 @@ public class IpgoDto {
 
 	private String num;
 	private String sangpum;
-	private String photoimage;
+	private String photoname;
 	private int price;
 	private Timestamp ipgoday;
 	public String getNum() {
@@ -27,11 +27,11 @@ public class IpgoDto {
 	public void setSangpum(String sangpum) {
 		this.sangpum = sangpum;
 	}
-	public String getPhotoimage() {
-		return photoimage;
+	public String getPhotoname() {
+		return photoname;
 	}
-	public void setPhotoimage(String photoimage) {
-		this.photoimage = photoimage;
+	public void setPhotoname(String photoname) {
+		this.photoname = photoname;
 	}
 	public int getPrice() {
 		return price;
