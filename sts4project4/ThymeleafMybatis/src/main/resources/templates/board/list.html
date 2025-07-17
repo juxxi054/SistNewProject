@@ -12,8 +12,11 @@ layout:decorate="~{layout/layoutMain}">
 </head>
 <body>
 <div layout:fragment="content">
-   <h1>보드리스트입니다</h1>
-    <img alt="" src="/image2/20.png">
+<br><br>
+   <h3 class="alert alert-info">자동차 목록출력</h3>
+    <h5><b>총 [[${totalcount}]]개의 자동차 정보가 있습니다</b></h5>
+   <button type="button" class="btn btn-info"
+   onclick="location.href='./addcar'">자동차등록</button>
 </div>
 </body>
 </html>

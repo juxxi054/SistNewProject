@@ -55,17 +55,21 @@ public class ShopService {
 	
 	public ShopDto getData(int num)
 	{
-		return maper.getData(num);
+		return mapper.getData(num);
 	}
+	
 	public void deleteShop(
 			@RequestParam("num") int num,HttpSession session)
 	{
-		String 
+		String oldFileName=mapper.getData(num).getPhoto();
+		String realPath=session.getServletContext().getRealPath("/save");
+		
+		File file=new File(realPath+"\\"+oldFileName);
+		if(file.exists())
+			file.delete();
+		
+		mapper.deleteShop(num);
 	}
 	
 	
 }
-
-
-
-

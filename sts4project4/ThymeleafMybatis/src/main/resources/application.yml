@@ -9,8 +9,16 @@ spring:
     url: jdbc:mysql://localhost:3306/rain?serverTimezone=Asia/Seoul
     username: angel
     password: a1234
+#Jpa_setting
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
 #mybatis
 mybatis:
   type-aliases-package: thyme.data.dto
   mapper-locations:
-  - /mapper/**/*.xml
+

@@ -1,8 +1,8 @@
 package thyme.data.controller;
 
-import java.security.Provider.Service;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +21,7 @@ import thyme.data.service.ShopService;
 public class ShopController {
 
    
-	private final ShopService service = new ShopService();
+	private  final ShopService service;
 	
 	@GetMapping("/shop/list")
 	public String shopList(Model model)
@@ -55,20 +55,19 @@ public class ShopController {
 	@GetMapping("/shop/detail")
 	public String detail(@RequestParam("num") int num,Model model)
 	{
-		ShopDto dto=Service.getData(num);
-		model.addAttribute("dto",dto);
+		ShopDto dto=service.getData(num);
+		model.addAttribute("dto", dto);
 		
 		return "shop/shopdetail";
 	}
 	
 	@GetMapping("/shop/delete")
-	public String delete(@RequestParam("num"))
+	public String delete(@RequestParam("num") int num,
+			HttpSession session)
 	{
-		service.deleteShop(num,session);
+		service.deleteShop(num, session);
 		return "redirect:list";
-		
 	}
+	
+	
 }
-
-
-

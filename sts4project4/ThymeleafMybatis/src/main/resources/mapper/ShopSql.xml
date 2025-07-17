@@ -10,4 +10,5 @@
   <select id="getAllSangpums" resultType="shop">
     select * from myshop order by num
   </select>
+  
 </mapper>
